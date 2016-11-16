@@ -1,7 +1,7 @@
 <?php
 require("../restritos.php"); 
 require_once '../init.php';
-$cHome = "active";
+$cMont = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
 ?>
