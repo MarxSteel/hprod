@@ -3,7 +3,7 @@ require("restritos.php");
 require_once 'init.php';
 $cHome = "active";
 $PDO = db_connect();
-require_once 'QueryUser.php';
+require 'QueryUser.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,71 +68,82 @@ require_once 'QueryUser.php';
  </section>
  <section class="content">
   <div class="row">
-  <?php if ($permSup === "1") { ?>  
+   <?php if ($PMontagem === "1") { ?>
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
      <div class="info-box">
-      <a href="atendimento/dashboard.php" >
+      <a href="P2/Montagem.php" >
        <span class="info-box-icon bg-aqua">
-        <i class="fa fa-plus"></i>
+        <i class="fa fa-wrench"></i>
        </span>
       </a>
-      <div class="info-box-content"><h4>ATENDIMENTOS</h4></div>
+      <div class="info-box-content">Montagem<br /><h4>CADASTRO</h4></div>
      </div>                  
     </div>
    </div> 
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
      <div class="info-box">
-      <a href="revendas/dashboard.php" >
+      <a href="P2/Pendentes.php" >
        <span class="info-box-icon bg-red">
-        <i class="fa fa-newspaper-o"></i>
+        <i class="fa fa-exclamation-triangle"></i>
        </span>
       </a>
-      <div class="info-box-content"><h4>CADASTRO DE REVENDAS</h4></div>
+      <div class="info-box-content">Montagem<br /><h4>PENDENTES</h4></div>
      </div>                  
     </div>
    </div> 
-  <?php } else { } if ($permFw === "1") { ?>
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
      <div class="info-box">
-      <a href="engenharia/dashboard.php" >
+      <a href="P2/MeusEquips.php" >
        <span class="info-box-icon bg-green">
         <i class="fa fa-file-code-o"></i>
        </span>
       </a>
-      <div class="info-box-content"><h4>CADASTRO DE EQUIPS.</h4></div>
-     </div>                  
-    </div>
-   </div>
-   <?php } else { } if ($permRel === "1") { ?>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="relatorios/dashboard.php" >
-       <span class="info-box-icon bg-orange">
-        <i class="fa fa-pie-chart"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><h4>RELATÓRIOS</h4></div>
-     </div>                  
-    </div>
-   </div>
-  <?php } else { } if ($permUsr === "1") { ?>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="usuarios/dashboard.php" >
-       <span class="info-box-icon bg-purple ">
-        <i class="fa fa-users"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><h4>USU&Aacute;RIOS</h4></div>
+      <div class="info-box-content">Montagem<br /><h4>MEUS EQUIPAMENTOS</h4></div>
      </div>                  
     </div>
    </div> 
-  <?php } else { } ?>
+   <?php } else{ } if ($PReteste === "1") { ?>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="P2/MeusEquips.php" >
+       <span class="info-box-icon bg-yellow">
+        <i class="fa fa-refresh"></i>
+       </span>
+      </a>
+      <div class="info-box-content">Contrl. Reteste<br /><h4>RETESTE</h4></div>
+     </div>                  
+    </div>
+   </div> 
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="P2/QuantGeral.php" >
+       <span class="info-box-icon bg-navy">
+        <i class="fa fa-server"></i>
+       </span>
+      </a>
+      <div class="info-box-content">Contrl. Reteste<br /><h4>TODOS OS EQUIPAMENTOS</h4></div>
+     </div>                  
+    </div>
+   </div> 
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="Print/dashboard.php" >
+       <span class="info-box-icon bg-purple">
+        <i class="fa fa-print"></i>
+       </span>
+      </a>
+      <div class="info-box-content">Contrl. Reteste<br /><h4>IMPRESSÃO</h4></div>
+     </div>                  
+    </div>
+   </div> 
+
+   <?php } else { } ?>
  </section>
 </div><!-- CONTENT-WRAPPER -->
 <?php include_once 'footer.php'; ?>
