@@ -3,7 +3,11 @@
  $query->execute();
   $row = $query->fetch();
   $NomeUserLogado = $row['Nome'];			//NOME DO USUÁRIO
+  $Nick = $NomeUserLogado;
   $PMontagem = $row['P2Mon'];			//PRIVILÉGIOS DE MONTAGEM
   $PReteste = $row['P2Mon'];			//PRIVILÉGIOS DE RETESTE
-
+  $MeuIP = $row['P2IP'];			//PRIVILÉGIOS DE RETESTE
+  $WIEGAND = $row['CartaoWiegand'];
+  $ABATRACK = $row['CartaoAba'];
+  $SMARTCARD = $row['CartaoSmart'];
 ?>
