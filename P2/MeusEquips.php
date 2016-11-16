@@ -115,14 +115,7 @@ include_once '../footer.php';
 <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script>
   $(function () {
-    $('#PU373').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": false,
-      "info": true,
-      "autoWidth": true
-    });    
+    $('#RU1510').DataTable();    
     $('#PU1510').DataTable({
       "paging": true,
       "lengthChange": false,
