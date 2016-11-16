@@ -18,6 +18,10 @@ function dbcon()
 }
 $IPImpressora = "192.168.60.38";
 
+$Ateste = "12345";
+$Wteste = "12345";
+$Mteste = "1234";
+
 //AQUI EU DECLARO A FUNÇÃO DE CHAMAR PORCENTAGEM
 // Y É X% DE Z
 function porcentagem_nnx ($parcial, $porcentagem ) {
