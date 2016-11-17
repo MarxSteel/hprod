@@ -82,12 +82,26 @@ require '../QueryUser.php';
     <div class="info-box">
      <a data-toggle="modal" data-target="#Hexa">
       <span class="info-box-icon">
-       <img src="../dist/img/relogios/hexa/a.png" align="center" width="130" /></span>
+      <img src="../dist/img/relogios/hexa/a.png" align="center" width="130" />
       </span>
      </a>
      <div class="info-box-content"><br /><h4>HEXA</h4></div>
     </div>
    </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#Prisma">
+      <span class="info-box-icon">
+      <img src="../dist/img/relogios/Prisma/Prisma.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>Prisma</h4></div>
+    </div>
+   </div>
+
+
+
+
   </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
