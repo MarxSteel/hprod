@@ -2,15 +2,8 @@
 require("../../../restritos.php");
 require_once '../../../init.php';
 $PDO = db_connect();
- $query = $PDO->prepare("SELECT * FROM login WHERE login='$login'");
- $query->execute();
-  $row = $query->fetch();
-  $MetaPrevista = $row['MetaPrevista'];
-  $Distrito = $row['MetaRealizada'];
-  $Nick = $row['Nome'];
-  $PermMontagem = $row['P2Montagem'];
+include_once '../../../QueryUser.php';
   $Valida = $_GET['Sec'];
-  $MeuIP = $row['MeuIP'];
   //DECLARANDO A LINHA DE PROTOCOLO COM EMPREGADOR
   $empregador = "01+EE+00+1]01245055000124]]TESTE DE FABRICA]LOCAL DE TESTE";
    $ProtocoloData = date('d/m/y');
@@ -54,7 +47,7 @@ $PDO = db_connect();
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: PRISMA SUPER FÁCIL R02</li>
+      <li>CADASTRO DE EQUIPAMENTO: PRISMA SUPER FÁCIL R03</li>
       <li><code>D. ALFANUMÉRICO 16X2 | PROXIMIDADE + BARRAS</code></li>
      </ol>
     </section>
