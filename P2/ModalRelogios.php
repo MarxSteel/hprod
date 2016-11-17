@@ -90,7 +90,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/01/R01_E1.php');">
+          <a href="javascript:abrir('Cad/02/A.php');">
            <span class="info-box-icon bg-aqua">A</span>
           </a>
           <div class="info-box-content">
@@ -106,7 +106,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/01/R02_E1.php');">
+          <a href="javascript:abrir('Cad/02/B.php');">
            <span class="info-box-icon bg-red">B</span>
           </a>
           <div class="info-box-content">
@@ -122,7 +122,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/01/R03_E1.php');">
+          <a href="javascript:abrir('Cad/02/C.php');">
            <span class="info-box-icon bg-orange">C</span>
           </a>
           <div class="info-box-content">
@@ -138,7 +138,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/01/R04_E1.php');">
+          <a href="javascript:abrir('Cad/02/D.php');">
            <span class="info-box-icon bg-green">D</span>
           </a>
           <div class="info-box-content">
@@ -154,7 +154,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/01/R04_E1.php');">
+          <a href="javascript:abrir('Cad/02/E.php');">
            <span class="info-box-icon bg-navy">E</span>
           </a>
           <div class="info-box-content">
