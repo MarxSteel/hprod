@@ -2,17 +2,8 @@
 require("../../../restritos.php");
 require_once '../../../init.php';
 $PDO = db_connect();
- $query = $PDO->prepare("SELECT * FROM login WHERE login='$login'");
- $query->execute();
-  $row = $query->fetch();
-  $Distrito = $row['MetaRealizada'];
-  $Nick = $row['Nome'];
-  $PermMontagem = $row['P2Montagem'];
-  $Valida = "1";
-  $Montagens = $row['MontOK'];
-   $NovaMontagem = $Montagens+1;
-  $Meta = $row['MetaRealizada'];
-   $NovaMeta = $Meta+1;
+include_once '../../../QueryUser.php';
+
    $Valida = $_GET['Sec'];
 ?>
 <!DOCTYPE html>
@@ -51,8 +42,8 @@ $PDO = db_connect();
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: PRISMA SF R02</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA + PROXIMIDADE</code></li>
+      <li>CADASTRO DE EQUIPAMENTO: PRISMA SUPER FÁCIL R04</li>
+      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA</code></li>
      </ol>
     </section>
     <?php
@@ -136,16 +127,9 @@ $PDO = db_connect();
        $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio) VALUES ('Prisma SF R04', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio')");
         if($executa)
         {
-         echo '<script type="text/javascript">alert("Equipamento Cadastrado com Sucesso");</script>';
-         $executa2 = $PDO->query("UPDATE login SET MetaRealizada='$NovaMeta', MontOK='$NovaMontagem' WHERE login='$login'");
-          if ($executa2) {
-           echo '<script type="text/javascript">alert("Metas Atualizadas com sucesso");</script>';
+           echo '<script type="text/javascript">alert("Equipamento Cadastrado");</script>';
            echo '<script type="text/javascript">window.close();</script>';
           }
-          else{
-           echo '<script type="text/javascript">alert("NÃO FOI POSSÍVEL ATUALIZAR METAS");</script>';
-          }
-         }
          else{
           echo $M005;
          }
