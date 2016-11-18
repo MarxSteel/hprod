@@ -48,7 +48,7 @@ include_once '../../../QueryUser.php';
      </ol>
     </section>
     <?php
-    if ($Valida <> '145') {
+    if ($Valida <> '11') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -64,7 +64,7 @@ include_once '../../../QueryUser.php';
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '145') {
+    elseif ($Valida == '11') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -142,16 +142,9 @@ include_once '../../../QueryUser.php';
        $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LProx, LBar) VALUES ('Prisma F', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio', '$Prox', '9')");
         if($executa)
         {
-         echo '<script type="text/javascript">alert("Equipamento Cadastrado com Sucesso");</script>';
-         $executa2 = $PDO->query("UPDATE login SET MetaRealizada='$NovaMeta', MontOK='$NovaMontagem' WHERE login='$login'");
-          if ($executa2) {
-           echo '<script type="text/javascript">alert("Metas Atualizadas com sucesso");</script>';
-           echo '<script type="text/javascript">window.close();</script>';
-          }
-          else{
-           echo '<script type="text/javascript">alert("NÃO FOI POSSÍVEL ATUALIZAR METAS");</script>';
-          }
-         }
+         echo '<script type="text/javascript">alert("Cadastrado com Sucesso");</script>';
+         echo '<script type="text/javascript">window.close();</script>';
+        }
          else{
           echo $M005;
          }

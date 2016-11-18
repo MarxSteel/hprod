@@ -48,7 +48,7 @@ include_once '../../../QueryUser.php';
      </ol>
     </section>
     <?php
-    if ($Valida <> '11') {
+    if ($Valida <> '145') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -64,7 +64,7 @@ include_once '../../../QueryUser.php';
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '11') {
+    elseif ($Valida == '145') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -108,25 +108,19 @@ include_once '../../../QueryUser.php';
       if(@$_POST["enviar"]){
        $prefixoREP = "0000400164";
        $numREP = $_POST["numREP"];
+       $Prox = $_POST["proximidade"];
        $numFabrica = $prefixoREP . $numREP;
        $HOS = $_POST["hos"];
         $data = date("Y/m/d");
         $hora = date("H:i:s");
        $Obseracao = str_replace("\r\n", "<br/>", strip_tags($_POST["descricao"]));
         //GRAVANDO NO BANCO DE DADOS
-       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LProx) VALUES ('Prisma I', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Prox')");
+       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LProx) VALUES ('Prisma I', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Prox')");
         if($executa)
         {
-         echo '<script type="text/javascript">alert("Equipamento Cadastrado com Sucesso");</script>';
-         $executa2 = $PDO->query("UPDATE login SET MetaRealizada='$NovaMeta', MontOK='$NovaMontagem' WHERE login='$login'");
-          if ($executa2) {
-           echo '<script type="text/javascript">alert("Metas Atualizadas com sucesso");</script>';
-           echo '<script type="text/javascript">window.close();</script>';
-          }
-          else{
-           echo '<script type="text/javascript">alert("NÃO FOI POSSÍVEL ATUALIZAR METAS");</script>';
-          }
-         }
+         echo '<script type="text/javascript">alert("Cadastrado com Sucesso");</script>';
+         echo '<script type="text/javascript">window.close();</script>';
+        }
          else{
           echo $M005;
          }

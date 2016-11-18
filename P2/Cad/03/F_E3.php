@@ -47,7 +47,7 @@ include_once '../../../QueryUser.php';
      </ol>
     </section>
     <?php
-    if ($Valida <> '199') {
+    if ($Valida <> '42') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -63,7 +63,7 @@ include_once '../../../QueryUser.php';
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '199') {
+    elseif ($Valida == '42') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
