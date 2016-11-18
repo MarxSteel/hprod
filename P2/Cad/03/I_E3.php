@@ -3,7 +3,7 @@ require("../../../restritos.php");
 require_once '../../../init.php';
 $PDO = db_connect();
 include_once '../../../QueryUser.php';
-  $MeuIP = $row['MeuIP'];
+  $Valida = $_GET['Sec'];
   //DECLARANDO ENVIO DE COLABORADOR NA MATRICULA 1
 ?>
 <!DOCTYPE html>

@@ -106,16 +106,9 @@ include_once '../../../QueryUser.php';
        $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LProx) VALUES ('Prisma G', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '04')");
         if($executa)
         {
-         echo '<script type="text/javascript">alert("Equipamento Cadastrado com Sucesso");</script>';
-         $executa2 = $PDO->query("UPDATE login SET MetaRealizada='$NovaMeta', MontOK='$NovaMontagem' WHERE login='$login'");
-          if ($executa2) {
-           echo '<script type="text/javascript">alert("Metas Atualizadas com sucesso");</script>';
-           echo '<script type="text/javascript">window.close();</script>';
-          }
-          else{
-           echo '<script type="text/javascript">alert("NÃO FOI POSSÍVEL ATUALIZAR METAS");</script>';
-          }
-         }
+         echo '<script type="text/javascript">alert("Cadastrado com Sucesso");</script>';
+         echo '<script type="text/javascript">window.close();</script>';
+        }
          else{
           echo $M005;
          }

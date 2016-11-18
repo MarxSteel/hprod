@@ -108,8 +108,26 @@ require '../QueryUser.php';
      <div class="info-box-content"><br /><h4>Compacto</h4></div>
     </div>
    </div>
-
-
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#Orion6">
+      <span class="info-box-icon">
+      <img src="../dist/img/relogios/Orion_6/Orion6.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>Orion 6</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#Onix">
+      <span class="info-box-icon bg-red">
+      <img src="../dist/img/relogios/Velti/onix.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>Velti Ônix</h4></div>
+    </div>
+   </div>
 
   </div>
  </section>

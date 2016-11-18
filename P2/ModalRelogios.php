@@ -193,7 +193,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/A.php');">
+          <a href="javascript:abrir('Cad/03/E_E1.php');">
            <span class="info-box-icon bg-aqua">E</span>
           </a>
           <div class="info-box-content">
@@ -207,7 +207,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/B.php');">
+          <a href="javascript:abrir('Cad/03/F_E1.php');">
            <span class="info-box-icon bg-red">F</span>
           </a>
           <div class="info-box-content">
@@ -221,7 +221,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/C.php');">
+          <a href="javascript:abrir('Cad/03/G_E1.php');">
            <span class="info-box-icon bg-orange">G</span>
           </a>
           <div class="info-box-content">
@@ -235,7 +235,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/D.php');">
+          <a href="javascript:abrir('Cad/03/H_E1.php');">
            <span class="info-box-icon bg-green">H</span>
           </a>
           <div class="info-box-content">
@@ -249,7 +249,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/E.php');">
+          <a href="javascript:abrir('Cad/03/I_E1.php');">
            <span class="info-box-icon bg-navy">I</span>
           </a>
           <div class="info-box-content">
@@ -263,7 +263,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/E.php');">
+          <a href="javascript:abrir('Cad/03/J_E1.php');">
            <span class="info-box-icon bg-maroon">J</span>
           </a>
           <div class="info-box-content">
@@ -277,7 +277,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/02/E.php');">
+          <a href="javascript:abrir('Cad/03/K_E1.php');">
            <span class="info-box-icon bg-purple">K</span>
           </a>
           <div class="info-box-content">
@@ -393,3 +393,169 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO COMPACTO -->
+<!-- MODAL DO ORION 6 -->
+<div class="modal fade " id="Orion6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Compacto
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6A.php');">
+           <span class="info-box-icon bg-aqua">6A</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6A</span>
+           <span class="info-box-number">0000400500<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6B.php');">
+           <span class="info-box-icon bg-red">6B</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6B</span>
+           <span class="info-box-number">0000400800<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6C.php');">
+           <span class="info-box-icon bg-orange">6C</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6C</span>
+           <span class="info-box-number">0000400700<code>XXXXXXX</code></span>
+           <span class="progress-description">BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6D.php');">
+           <span class="info-box-icon bg-green">6D</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6D</span>
+           <span class="info-box-number">0000400900<code>XXXXXXX</code></span>
+           <span class="progress-description">PROXIMIDADE</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO ORION 6 -->
+<!-- MODAL DO ONIX -->
+<div class="modal fade " id="Onix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Velti &Ocirc;nix
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix1.php');">
+           <span class="info-box-icon bg-aqua">1</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 1</span>
+           <span class="info-box-number">0003900379<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix2.php');">
+           <span class="info-box-icon bg-red">2</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 2</span>
+           <span class="info-box-number">0003900380<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix3.php');">
+           <span class="info-box-icon bg-orange">3</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 3</span>
+           <span class="info-box-number">0003900381<code>XXXXXXX</code></span>
+           <span class="progress-description">BARRAS + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix4.php');">
+           <span class="info-box-icon bg-green">4</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 4</span>
+           <span class="info-box-number">0003900382<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + SMARTCARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix5.php');">
+           <span class="info-box-icon bg-navy">5</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 5</span>
+           <span class="info-box-number">0003900383<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS + PROX + SMARTCARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+         </div>                 
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO ONIX -->
