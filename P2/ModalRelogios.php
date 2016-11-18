@@ -393,3 +393,76 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO COMPACTO -->
+<!-- MODAL DO ORION 6 -->
+<div class="modal fade " id="Orion6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Compacto
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6A.php');">
+           <span class="info-box-icon bg-aqua">6A</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6A</span>
+           <span class="info-box-number">0000400500<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6B.php');">
+           <span class="info-box-icon bg-red">6B</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6B</span>
+           <span class="info-box-number">0000400800<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6C.php');">
+           <span class="info-box-icon bg-orange">6C</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6C</span>
+           <span class="info-box-number">0000400700<code>XXXXXXX</code></span>
+           <span class="progress-description">BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/05/6D.php');">
+           <span class="info-box-icon bg-green">6D</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ORION 6D</span>
+           <span class="info-box-number">0000400900<code>XXXXXXX</code></span>
+           <span class="progress-description">PROXIMIDADE</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO ORION 6 -->
