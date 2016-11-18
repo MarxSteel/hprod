@@ -24,7 +24,7 @@ $Descricao = $QryREP['Observa'];
 
 
 //CONCATENANDO DATA DE REPROVAÇÃO COM HORA DE REPROVAÇÃO
-$Reprovado = $DataRetorna . " " . $HoraRetorna;
+$Reprovado = $DataRetorna;
 
 //CONCATENANDO DATA DE MONTAGEM COM HORA DE MONTAGEM
 $DataMontagem = $DataCadastro . ' ' . $HoraCadastro;

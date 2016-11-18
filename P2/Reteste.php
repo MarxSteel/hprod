@@ -5,20 +5,6 @@ $cReteste = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
 
-
-$Chama1510 = "SELECT * FROM cadastro_1510 WHERE Status='1' ORDER BY DataCadastro ASC";
-$Qry1510 = $PDO->prepare($Chama1510);
-$Qry1510->execute();
-
-$Chama373 = "SELECT * FROM cadastro_373 WHERE Status='1' ORDER BY DataCadastro ASC";
-$Qry373 = $PDO->prepare($Chama373);
-$Qry373->execute();
-
-$ChamaAcc = "SELECT * FROM cadastro_acesso WHERE Status='1' ORDER BY DataCadastro ASC";
-$QryAcc = $PDO->prepare($ChamaAcc);
-$QryAcc->execute();
-?>
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,7 +65,7 @@ $QryAcc->execute();
   </aside>
 <div class="content-wrapper">
  <section class="content-header">
-  <h1>Equipamentos Pendentes<small><?php echo $titulo; ?></small></h1>
+  <h1>Controle de Reteste<small><?php echo $titulo; ?></small></h1>
  </section>
  <section class="content">
   <div class="row">
@@ -90,18 +76,18 @@ $QryAcc->execute();
       <li><a href="#373" data-toggle="tab">Ponto 373</a></li>
       <li><a href="#acesso" data-toggle="tab">Acesso</a></li>
       <li class="pull-left header">
-        <i class="fa fa-exclamation-triangle"></i> Lista de Equipamentos Pendentes
+        <i class="fa fa-exclamation-triangle"></i> Lista de Equipamentos
       </li>
      </ul>
      <div class="tab-content no-padding">
       <div class="chart tab-pane active" id="1510">
-      <?php include_once 'tabelas/PU1510.php'; ?>
+      <?php include_once 'tabelas/Reteste1510.php'; ?>
       </div>
       <div class="chart tab-pane" id="373" >
-      <?php include_once 'tabelas/PU373.php'; ?>
+      <?php include_once 'tabelas/Reteste373.php'; ?>
       </div>
       <div class="chart tab-pane" id="acesso">
-      <?php include_once 'tabelas/PUAcesso.php'; ?>
+      <?php include_once 'tabelas/RetesteAcesso.php'; ?>
       </div>
      </div>
     </div>
@@ -126,15 +112,11 @@ include_once '../footer.php';
     <script src="../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-
-
-
-
 <script>
   $(function () {
-    $("#PU1510").DataTable();
-    $("#PU373").DataTable();
-    $("#PUAcesso").DataTable();
+    $("#Reteste373").DataTable();
+    $("#Reteste1510").DataTable();
+    $("#RetesteAcesso").DataTable();
   });
 </script>
 <script language="JavaScript">

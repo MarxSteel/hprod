@@ -4,7 +4,7 @@ require_once '../../init.php';
 $NumeroREP = $_GET['ID']; 
 $PDO = db_connect();
 require_once '../../QueryUser.php';
-require_once '373Valida.php';
+require_once 'AcessoValida.php';
 
 
 
@@ -117,30 +117,29 @@ require_once '373Valida.php';
         </i>
        </li>
       </div>
-      <form name="D373" id="name" method="post" action="" enctype="multipart/form-data">
+      <form name="AACESSO" id="name" method="post" action="" enctype="multipart/form-data">
        <div class="col-xs-12">Observações
         <textarea name="descricao" cols="45" rows="3" class="form-control" id="descricao"></textarea>
        </div>
        <div class="col-xs-12"><br />
-        <input name="D373" type="submit" class="btn btn-danger btn-lg btn-block"  value="DEVOLVER EQUIPAMENTO"  />
+        <input name="AACESSO" type="submit" class="btn btn-success btn-lg btn-block"  value="LIBERAR EQUIPAMENTO"  />
        </div>
       </form>
        <?php 
-        if(@$_POST["D373"])
+        if(@$_POST["AACESSO"])
         {
          $DataHoje = date('Y-m-d H:i:s');
          $DataBrasil = date('d/m/Y H:i:s');
           $Obser = str_replace("\r\n", "<br/>", strip_tags($_POST["descricao"]));
-         $At = "<br /><strong>Nova Atualização: </strong>EQUIPAMENTO DEVOLVIDO AO RETESTE";
+         $At = "<br /><strong>Nova Atualização:</strong> Equipamento Liberado";
          $Us = "<br /><strong>Usuário: </strong>" . $NomeUserLogado;
          $Dt = "<br /><strong>Data: </strong>" . $DataBrasil;
          $Ob = "<br /><strong>Observação: </strong><br />" . $Obser;
          $Atual = $Descricao . $At . $Us . $Dt . $Ob;
-         $DataRetorna = date('Y-m-d H:i:s');
-         $executa = $PDO->query("UPDATE cadastro_373 SET Status='1', Observa='$Atual' WHERE NumSerie='$NumeroREP' ");
+         $executa = $PDO->query("UPDATE cadastro_acesso SET Status='3', DataLibera='$DataHoje', UserLibera='$NomeUserLogado', Observa='$Atual' WHERE NumSerie='$NumeroREP' ");
          if($executa)
          {
-         echo '<script type="text/javascript">alert("Devolvido Com Sucesso!");</script>';
+         echo '<script type="text/javascript">alert("Liberado Com Sucesso!");</script>';
          echo '<script type="text/javascript">window.close();</script>';
          }
          else
