@@ -466,3 +466,96 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO ORION 6 -->
+<!-- MODAL DO ONIX -->
+<div class="modal fade " id="Onix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Velti &Ocirc;nix
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix1.php');">
+           <span class="info-box-icon bg-aqua">1</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 1</span>
+           <span class="info-box-number">0003900379<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix2.php');">
+           <span class="info-box-icon bg-red">2</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 2</span>
+           <span class="info-box-number">0003900380<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix3.php');">
+           <span class="info-box-icon bg-orange">3</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 3</span>
+           <span class="info-box-number">0003900381<code>XXXXXXX</code></span>
+           <span class="progress-description">BARRAS + PROXIMIDADE</span>
+          </div>
+         </div>                  
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix4.php');">
+           <span class="info-box-icon bg-green">4</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 4</span>
+           <span class="info-box-number">0003900382<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + SMARTCARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/06/Onix5.php');">
+           <span class="info-box-icon bg-navy">5</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">ONIX 5</span>
+           <span class="info-box-number">0003900383<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA + BARRAS + PROX + SMARTCARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+         </div>                 
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO ONIX -->
