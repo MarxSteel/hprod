@@ -128,7 +128,16 @@ require '../QueryUser.php';
      <div class="info-box-content"><br /><h4>Velti Ônix</h4></div>
     </div>
    </div>
-
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#Velti">
+      <span class="info-box-icon bg-red">
+      <img src="../dist/img/relogios/Velti/velti.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>Velti Ponto</h4></div>
+    </div>
+   </div>
   </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
