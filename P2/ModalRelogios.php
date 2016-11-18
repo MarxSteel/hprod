@@ -799,3 +799,44 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO PRIMME E ARGOS-->
+<!-- MODAL DO VELTI 373 E ACESSO-->
+<div class="modal fade " id="Veltis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Velti 373 e Velti Acesso
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/09/VeltiAcesso.php');">
+           <span class="info-box-icon bg-aqua">A</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Velti <code>ACESSO</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/09/Velti373.php');">
+           <span class="info-box-icon bg-red">373</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Velti <code>373</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO VELTI 373 E ACESSO-->
