@@ -3,7 +3,6 @@ require("../../../restritos.php");
 require_once '../../../init.php';
 $PDO = db_connect();
 include_once '../../../QueryUser.php';
-   $Valida = $_GET['Sec'];
 
 ?>
 <!DOCTYPE html>
@@ -42,42 +41,21 @@ include_once '../../../QueryUser.php';
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: PRISMA SUPER FÁCIL R03</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | PROXIMIDADE + BARRAS</code></li>
+      <li>CADASTRO DE EQUIPAMENTO: HEXA C</li>
+      <li><code>BIOMETRIA / BARRAS</code></li>
      </ol>
     </section>
-    <?php
-    if ($Valida <> '1') {
-      echo '<section class="content">';
-      echo '<div class="box box-default">';
-      echo '<div class="box-header with-border">';
-      echo '<h2 class="box-title"><strong> PASSO 5: </strong>FINALIZAR CADASTRO</h2>';
-      echo '</div>';
-      echo '<div class="box-body">';
-      echo '<div class="alert alert-danger alert-dismissible">';
-      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-      echo '<h4><i class="icon fa fa-ban"></i> Erro! =(</h4>';
-      echo '<h3>Você não seguiu os passos corretos para Cadastro do equipamento. Feche a tela e refaça novamente. ;D </h3><br />';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</section>';
-    }
-    elseif ($Valida == '1') {
-      echo '<section class="content">';
-      echo '<div class="box box-default">';
-      echo '<div class="box-header with-border">';
-      echo '<h2 class="box-title"><strong> PASSO 5: </strong>FINALIZANDO CADASTRO</h2>';
-      echo '</div>';
-      echo '<div class="box-body">';
-      ?>
+    <section class="content">
+     <div class="box box-default">
+      <div class="box-header with-border">
+       <h2 class="box-title">CADASTRANDO EQUIPAMENTO</h2>
      </div>
      <div class="box-body">
       <form name="cadastrar_anuncio" id="name" method="post" action="" enctype="multipart/form-data">
        <table width="400" border="0" align="center">
         <tr>
          <div class="col-xs-5">PREFIXO (MODELO)
-          <input class="form-control" disabled="disabled" TYPE="text" VALUE="0000400206">
+          <input class="form-control" disabled="disabled" TYPE="text" VALUE="0000400252">
          </div>
          <div class="col-xs-7">NÚMERO DE SÉRIE
           <input name="numREP" type="text" class="form-control" id="numREP" minlength="7" maxlength="7" required="required"/>
@@ -89,15 +67,16 @@ include_once '../../../QueryUser.php';
          </div>
         </tr>
         <tr>
-         <div class="col-xs-12">PROXIMIDADE
-          <select class="form-control" name="proximidade" id="proximidade" required="required">
+         <div class="col-xs-12">BIOMETRIA
+          <select class="form-control" name="biometria" id="biometria" required="required">
            <option value="" checked="checked"> >>SELECIONE<<</option>
-           <option value="01"> WIE - WIEGAND</option>
-           <option value="02"> ABA - ABATRACK</option>
-           <option value="03"> IND - INDALA</option>
-           <option value="04"> HID </option>
-           <option value="05"> ACU - Acura</option>
-           <option value="06"> PHID </option>
+           <option value="01"> (512K) - 0300 Digitais<code> SUPREMA </code></option>
+           <option value="02"> (4MB) - 9600 Digitais<code> SUPREMA </code></option>
+           <option value="03"> (8MB) - 15000 Digitais<code> SUPREMA </code></option>
+           <option value="04"> (1MB) - 1.900 Digitais<code> CAPACITIVA</code></option>
+           <option value="05"> (4MB) - 9.600 Digitais<code> CAPACITIVA</code></option>
+           <option value="06"> (4MB) - 9.600 Digitais<code> DEDO VIVO</code></option>
+           <option value="07">  1.000 Digitais<code> FS (FINCHOS) </code></option>
           </select>
          </div>
         </tr>
@@ -115,21 +94,21 @@ include_once '../../../QueryUser.php';
       </form>
       <?php
       if(@$_POST["enviar"]){
-       $prefixoREP = "0000400206";
+       $prefixoREP = "0000400252";
        $numREP = $_POST["numREP"];
        $numFabrica = $prefixoREP . $numREP;
        $HOS = $_POST["hos"];
-       $Prox = $_POST["proximidade"];
+       $Bio = $_POST["biometria"];
         $data = date("Y/m/d");
         $hora = date("H:i:s");
        $Obseracao = str_replace("\r\n", "<br/>", strip_tags($_POST["descricao"]));
         //GRAVANDO NO BANCO DE DADOS
-       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBar, LProx) VALUES ('Prisma SF R03', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '9', '$Prox')");
+       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LBar) VALUES ('HEXA C', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio', '9')");
         if($executa)
         {
          echo '<script type="text/javascript">alert("Equipamento Cadastrado!");</script>';
          echo '<script type="text/javascript">window.close();</script>';
-        }
+         }
          else{
           echo $M005;
          }
@@ -141,7 +120,6 @@ include_once '../../../QueryUser.php';
   </div>
  </div>
 <?php
-}
 include_once '../../../footer.php'; ?>
 </div>
 <script src="../../../plugins/jQuery/jquery-2.2.3.min.js"></script>

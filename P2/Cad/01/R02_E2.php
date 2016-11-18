@@ -2,15 +2,8 @@
 require("../../../restritos.php");
 require_once '../../../init.php';
 $PDO = db_connect();
- $query = $PDO->prepare("SELECT * FROM login WHERE login='$login'");
- $query->execute();
-  $row = $query->fetch();
-  $MetaPrevista = $row['MetaPrevista'];
-  $Distrito = $row['MetaRealizada'];
-  $Nick = $row['Nome'];
-  $PermMontagem = $row['P2Montagem'];
+include_once '../../../QueryUser.php';
   $Valida = $_GET['Sec'];
-  $MeuIP = $row['MeuIP'];
   //DECLARANDO A LINHA DE PROTOCOLO COM EMPREGADOR
   $empregador = "01+EE+00+1]01245055000124]]TESTE DE FABRICA]LOCAL DE TESTE";
    $ProtocoloData = date('d/m/y');

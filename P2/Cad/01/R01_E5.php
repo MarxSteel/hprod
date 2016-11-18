@@ -141,7 +141,7 @@ $Valida = $_GET['Sec'];
        $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LProx, LMif, LBar) VALUES ('Prisma SF R01', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio', '$Prox', '9', '9')");
         if($executa)
         {
-           echo '<script type="text/javascript">alert("Cadastrado com Sucesso!");</script>';
+         echo '<script type="text/javascript">alert("Equipamento Cadastrado!");</script>';
            echo '<script type="text/javascript">window.close();</script>';
          }
          else{

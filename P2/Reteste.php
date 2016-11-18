@@ -1,7 +1,7 @@
 <?php
 require("../restritos.php"); 
 require_once '../init.php';
-$cMont = "active";
+$cPend = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
 ?>
@@ -18,6 +18,8 @@ require '../QueryUser.php';
  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
  <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
+ <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+
 </head>
 <body class="hold-transition skin-blue-light fixed sidebar-mini">
 <div class="wrapper">
@@ -64,53 +66,33 @@ require '../QueryUser.php';
   </aside>
 <div class="content-wrapper">
  <section class="content-header">
-  <h1>Montagem de Equipamentos<small><?php echo $titulo; ?></small></h1>
+  <h1>Controle de teste<small><?php echo $titulo; ?></small></h1>
  </section>
  <section class="content">
   <div class="row">
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="#NovoPrismaSF">
-      <span class="info-box-icon">
-      <img src="../dist/img/relogios/Prisma_SF/PrismaSF.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><br /><h4>Prisma SF</h4></div>
+   <div class="col-xs-12">
+    <div class="nav-tabs-custom">    
+     <ul class="nav nav-tabs pull-right">
+      <li class="active"><a href="#1510" data-toggle="tab">Ponto 1510/INMETRO</a></li>
+      <li><a href="#373" data-toggle="tab">Ponto 373</a></li>
+      <li><a href="#acesso" data-toggle="tab">Acesso</a></li>
+      <li class="pull-left header">
+        <i class="fa fa-exclamation-triangle"></i> Lista de Equipamentos com Reteste Pendente
+      </li>
+     </ul>
+     <div class="tab-content no-padding">
+      <div class="chart tab-pane active" id="1510">
+      <?php include_once 'tabelas/Reteste1510.php'; ?>
+      </div>
+      <div class="chart tab-pane" id="373" >
+      <?php include_once 'tabelas/Reteste373.php'; ?>
+      </div>
+      <div class="chart tab-pane" id="acesso">
+      <?php include_once 'tabelas/RetesteAcesso.php'; ?>
+      </div>
+     </div>
     </div>
    </div>
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="#Hexa">
-      <span class="info-box-icon">
-      <img src="../dist/img/relogios/hexa/a.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><br /><h4>HEXA</h4></div>
-    </div>
-   </div>
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="#Prisma">
-      <span class="info-box-icon">
-      <img src="../dist/img/relogios/Prisma/Prisma.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><br /><h4>Prisma</h4></div>
-    </div>
-   </div>
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="#Compacto">
-      <span class="info-box-icon">
-      <img src="../dist/img/relogios/Compacto/sis.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><br /><h4>Compacto</h4></div>
-    </div>
-   </div>
-
-
-
   </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
@@ -128,6 +110,28 @@ include_once '../footer.php';
 <script src="../dist/js/app.min.js"></script>
 <script src="../dist/js/pages/dashboard.js"></script>
 <script src="../dist/js/demo.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#PU373').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": false,
+      "info": true,
+      "autoWidth": true
+    });    
+    $('#PU1510').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": false,
+      "info": true,
+      "autoWidth": true
+    });   
+  });
+</script>
 <script language="JavaScript">
 function abrir(URL) {
  
