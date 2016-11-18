@@ -716,3 +716,86 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO VELTI PONTO -->
+<!-- MODAL DO PRIMME E ARGOS -->
+<div class="modal fade " id="Primme" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: Primme
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/AcessoSF.php');">
+           <span class="info-box-icon bg-aqua">SF</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Super Fácil <code>ACESSO</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/PontoSF.php');">
+           <span class="info-box-icon bg-red">SF</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Super Fácil <code>Ponto</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/Ponto8x.php');">
+           <span class="info-box-icon bg-purple">8x</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Primme <code>Ponto</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/Acesso8x.php');">
+           <span class="info-box-icon bg-green">8x</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Primme <code>Acesso</code></span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/Argos.php');">
+           <span class="info-box-icon bg-orange">A</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-number"><br />Argos</span>
+          </div>
+         </div>                  
+        </div>
+       </div> 
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+         </div>                 
+        </div>
+       </div> 
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO PRIMME E ARGOS-->

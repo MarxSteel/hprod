@@ -138,6 +138,16 @@ require '../QueryUser.php';
      <div class="info-box-content"><br /><h4>Velti Ponto</h4></div>
     </div>
    </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#Primme">
+      <span class="info-box-icon">
+      <img src="../dist/img/relogios/Primme.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><h4>Primme <br/>Argos</h4></div>
+    </div>
+   </div>
   </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
