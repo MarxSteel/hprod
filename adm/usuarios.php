@@ -1,7 +1,7 @@
 <?php
 require("../restritos.php"); 
 require_once '../init.php';
-$cMont = "active";
+$cUsers = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
 
@@ -72,8 +72,6 @@ $QryUser->execute();
  </section>
  <section class="content">
   <div class="row">
-
-
   <?php if ($PermAdm === "1") { ?>
      <div class="col-md-8">
       <div class="info-box">
