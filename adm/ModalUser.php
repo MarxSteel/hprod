@@ -96,21 +96,21 @@
      <div class="col-xs-4">Montagem
       <select class="form-control" name="montagem" id="montagem" required="required">
        <option value="" checked="checked"> >>SELECIONE<<</option>
-       <option value="P"> Pode montar relógios</option>
+       <option value="1"> Pode montar relógios</option>
        <option value="0"> Não pode montar</option>
       </select>
      </div>
      <div class="col-xs-4">Reteste
       <select class="form-control" name="reteste" id="reteste" required="required">
        <option value="" checked="checked"> >>SELECIONE<<</option>
-       <option value="P"> Pode Retestar relógios</option>
+       <option value="1"> Pode Retestar relógios</option>
        <option value="0"> Não pode Retestar</option>
       </select>
      </div>
      <div class="col-xs-4">Catracas
       <select class="form-control" name="cat" id="cat" required="required">
        <option value="" checked="checked"> >>SELECIONE<<</option>
-       <option value="P"> Cadastra Catracas</option>
+       <option value="1"> Cadastra Catracas</option>
        <option value="0"> Não pode Cadastrar</option>
       </select>
      </div>
@@ -135,7 +135,7 @@
       $reteste = $_POST["reteste"]; //P2R
       $ativo = "1";
       $user_level = "2";
-       $executa = $PDO->query("INSERT INTO login (Nome, login, senha, P2Montagem, P2Reteste, CWieg, CAba, CMif, MeuIP, CadCat) VALUES ('$NomeCompleto', '$nick', '$passwd', '$montagem', '$reteste', '$wiegand', '$aba', '$mifare', '$ip', '$cat')");
+       $executa = $PDO->query("INSERT INTO login (Nome, login, senha, P2Mon, P2Ret, CartaoWiegand, CartaoAba, CartaoSmart, P2IP, P2Cat) VALUES ('$NomeCompleto', '$nick', '$passwd', '$montagem', '$reteste', '$wiegand', '$aba', '$mifare', '$ip', '$cat')");
         if($executa)
         {
          echo '<script type="text/javascript">alert("Usuário Adicionado!");</script>';
