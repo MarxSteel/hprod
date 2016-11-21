@@ -108,8 +108,8 @@ include_once '../footer.php';
     <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../plugins/slimScroll/jquery.slimScroll.min.js" type="text/javascript"></script>
     <script src='../plugins/fastclick/fastclick.min.js'></script>
-    <script src="../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script>
