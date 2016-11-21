@@ -5,11 +5,6 @@ $NumeroREP = $_GET['ID'];
 $PDO = db_connect();
 require_once '../../QueryUser.php';
 require_once '373Valida.php';
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -122,7 +117,7 @@ require_once '373Valida.php';
         <textarea name="descricao" cols="45" rows="3" class="form-control" id="descricao"></textarea>
        </div>
        <div class="col-xs-12"><br />
-        <input name="D373" type="submit" class="btn btn-danger btn-lg btn-block"  value="DEVOLVER EQUIPAMENTO"  />
+        <input name="D373" type="submit" class="btn btn-success btn-lg btn-block"  value="LIBERAR EQUIPAMENTO"  />
        </div>
       </form>
        <?php 
@@ -131,16 +126,16 @@ require_once '373Valida.php';
          $DataHoje = date('Y-m-d H:i:s');
          $DataBrasil = date('d/m/Y H:i:s');
           $Obser = str_replace("\r\n", "<br/>", strip_tags($_POST["descricao"]));
-         $At = "<br /><strong>Nova Atualização: </strong>EQUIPAMENTO DEVOLVIDO AO RETESTE";
+         $At = "<br /><strong>Nova Atualização:</strong> Equipamento Liberado";
          $Us = "<br /><strong>Usuário: </strong>" . $NomeUserLogado;
          $Dt = "<br /><strong>Data: </strong>" . $DataBrasil;
          $Ob = "<br /><strong>Observação: </strong><br />" . $Obser;
          $Atual = $Descricao . $At . $Us . $Dt . $Ob;
-         $DataRetorna = date('Y-m-d H:i:s');
-         $executa = $PDO->query("UPDATE cadastro_373 SET Status='1', Observa='$Atual' WHERE NumSerie='$NumeroREP' ");
+         $DataLiberar = date('Y-m-d H:i:s');
+         $executa = $PDO->query("UPDATE cadastro_373 SET Status='3', Observa='$Atual', DataLibera='$DataLiberar', UserLibera='$NomeUserLogado' WHERE NumSerie='$NumeroREP' ");
          if($executa)
          {
-         echo '<script type="text/javascript">alert("Devolvido Com Sucesso!");</script>';
+         echo '<script type="text/javascript">alert("Liberado Com Sucesso!");</script>';
          echo '<script type="text/javascript">window.close();</script>';
          }
          else

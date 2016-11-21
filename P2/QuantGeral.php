@@ -1,7 +1,7 @@
 <?php
 require("../restritos.php"); 
 require_once '../init.php';
-$cReteste = "active";
+$cQGeral = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
 
@@ -65,7 +65,7 @@ require '../QueryUser.php';
   </aside>
 <div class="content-wrapper">
  <section class="content-header">
-  <h1>Controle de Reteste<small><?php echo $titulo; ?></small></h1>
+  <h1>Cadastro Geral<small><?php echo $titulo; ?></small></h1>
  </section>
  <section class="content">
   <div class="row">
@@ -81,13 +81,13 @@ require '../QueryUser.php';
      </ul>
      <div class="tab-content no-padding">
       <div class="chart tab-pane active" id="1510">
-      <?php include_once 'tabelas/Reteste1510.php'; ?>
+      <?php include_once 'tabelas/Geral1510.php'; ?>
       </div>
       <div class="chart tab-pane" id="373" >
-      <?php include_once 'tabelas/Reteste373.php'; ?>
+      <?php include_once 'tabelas/Geral373.php'; ?>
       </div>
       <div class="chart tab-pane" id="acesso">
-      <?php include_once 'tabelas/RetesteAcesso.php'; ?>
+      <?php include_once 'tabelas/GeralAcesso.php'; ?>
       </div>
      </div>
     </div>
@@ -114,9 +114,9 @@ include_once '../footer.php';
 <!-- AdminLTE for demo purposes -->
 <script>
   $(function () {
-    $("#Reteste373").DataTable();
-    $("#Reteste1510").DataTable();
-    $("#RetesteAcesso").DataTable();
+    $("#Geral1510").DataTable();
+    $("#Geral373").DataTable();
+    $("#GeralAcesso").DataTable();
   });
 </script>
 <script language="JavaScript">

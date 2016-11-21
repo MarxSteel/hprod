@@ -133,7 +133,7 @@ require 'QueryUser.php';
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
      <div class="info-box">
-      <a href="Print/dashboard.php" >
+      <a href="Imprime/dashboard.php" >
        <span class="info-box-icon bg-purple">
         <i class="fa fa-print"></i>
        </span>
@@ -142,7 +142,6 @@ require 'QueryUser.php';
      </div>                  
     </div>
    </div> 
-
    <?php } else { } ?>
  </section>
 </div><!-- CONTENT-WRAPPER -->
