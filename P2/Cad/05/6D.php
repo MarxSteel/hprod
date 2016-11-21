@@ -40,8 +40,8 @@ include_once '../../../QueryUser.php';
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: ORION 6A</li>
-      <li><code>BIOMETRIA / PROXIMIDADE</code></li>
+      <li>CADASTRO DE EQUIPAMENTO: ORION 6D</li>
+      <li><code>PROXIMIDADE</code></li>
      </ol>
     </section>
     <section class="content">
@@ -106,10 +106,6 @@ include_once '../../../QueryUser.php';
         {
          echo '<script type="text/javascript">alert("Cadastrado com Sucesso");</script>';
          echo '<script type="text/javascript">window.close();</script>';
-        }
-        else
-        {
-         echo '<script type="text/javascript">alert("NÃO FOI POSSÍVEL ATUALIZAR METAS");</script>';
         }
         else 
         {

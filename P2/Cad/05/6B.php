@@ -108,7 +108,6 @@ include_once '../../../QueryUser.php';
          echo '<script type="text/javascript">alert("Cadastrado com Sucesso");</script>';
          echo '<script type="text/javascript">window.close();</script>';
         }
-         }
          else{
           echo $M005;
          }

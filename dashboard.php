@@ -105,6 +105,19 @@ require 'QueryUser.php';
      </div>                  
     </div>
    </div> 
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="pedidos/dashboard.php" >
+       <span class="info-box-icon bg-maroon">
+        <i class="fa fa-newspaper-o"></i>
+       </span>
+      </a>
+      <div class="info-box-content"><h4>PEDIDOS</h4></div>
+     </div>                  
+    </div>
+   </div> 
+
    <?php } else{ } if ($PReteste === "1") { ?>
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
@@ -142,7 +155,22 @@ require 'QueryUser.php';
      </div>                  
     </div>
    </div> 
+   <?php } else{ } if ($PermAdm === "1") { ?>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="adm/usuarios.php" >
+       <span class="info-box-icon bg-blue">
+        <i class="fa fa-users"></i>
+       </span>
+      </a>
+      <div class="info-box-content"><h4>Cadastro de Usuários</h4></div>
+     </div>                  
+    </div>
+   </div> 
    <?php } else { } ?>
+
+
  </section>
 </div><!-- CONTENT-WRAPPER -->
 <?php include_once 'footer.php'; ?>
