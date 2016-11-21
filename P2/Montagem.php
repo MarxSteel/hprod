@@ -140,6 +140,26 @@ require '../QueryUser.php';
    </div>
    <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
+     <a data-toggle="modal" data-target="#idnox">
+      <span class="info-box-icon bg-orange">
+      <img src="../dist/img/relogios/dixi/idnox.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>DIXI IDNOX</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#sindnox">
+      <span class="info-box-icon bg-orange">
+      <img src="../dist/img/relogios/dixi/sindnox.png" align="center" width="80" />
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>DIXI SINDNOX</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
      <a data-toggle="modal" data-target="#Primme">
       <span class="info-box-icon">
       <img src="../dist/img/relogios/Primme.png" align="center" width="130" />
@@ -156,6 +176,36 @@ require '../QueryUser.php';
       </span>
      </a>
      <div class="info-box-content"><h4>Velti Acesso <br/>Velti 373</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#7x">
+      <span class="info-box-icon bg-default">
+      <img src="../dist/img/relogios/orion-cr.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><h4>Linha 7x</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="carto">
+      <span class="info-box-icon bg-default">
+      <img src="../dist/img/relogios/plus.png" align="center" width="130" />
+      </span>
+     </a>
+     <div class="info-box-content"><h4>Cartográficos</h4></div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="outros">
+      <span class="info-box-icon bg-default">
+      <img src="../dist/img/relogios/vigia.png" align="center" width="50" />
+      </span>
+     </a>
+     <div class="info-box-content"><h4>Outros</h4></div>
     </div>
    </div>
   </div>
