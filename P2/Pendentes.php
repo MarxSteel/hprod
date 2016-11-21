@@ -4,21 +4,6 @@ require_once '../init.php';
 $cPend = "active";
 $PDO = db_connect();
 require '../QueryUser.php';
-
-
-$Chama1510 = "SELECT * FROM cadastro_1510 WHERE Status='2' AND UserCadastro='$NomeUserLogado' ORDER BY DataCadastro ASC";
-$Qry1510 = $PDO->prepare($Chama1510);
-$Qry1510->execute();
-
-$Chama373 = "SELECT * FROM cadastro_373 WHERE Status='2' AND UserCadastro='$NomeUserLogado' ORDER BY DataCadastro ASC";
-$Qry373 = $PDO->prepare($Chama373);
-$Qry373->execute();
-
-$ChamaAcc = "SELECT * FROM cadastro_acesso WHERE Status='2' AND UserCadastro='$NomeUserLogado' ORDER BY DataCadastro ASC";
-$QryAcc = $PDO->prepare($ChamaAcc);
-$QryAcc->execute();
-?>
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -122,8 +107,8 @@ include_once '../footer.php';
     <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../plugins/slimScroll/jquery.slimScroll.min.js" type="text/javascript"></script>
     <script src='../plugins/fastclick/fastclick.min.js'></script>
-    <script src="../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 
