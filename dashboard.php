@@ -122,7 +122,7 @@ require 'QueryUser.php';
    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="box box-widget widget-user">
      <div class="info-box">
-      <a href="P2/MeusEquips.php" >
+      <a href="P2/Reteste.php" >
        <span class="info-box-icon bg-yellow">
         <i class="fa fa-refresh"></i>
        </span>
@@ -165,6 +165,18 @@ require 'QueryUser.php';
        </span>
       </a>
       <div class="info-box-content"><h4>Cadastro de Usuários</h4></div>
+     </div>                  
+    </div>
+   </div> 
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="box box-widget widget-user">
+     <div class="info-box">
+      <a href="adm/relatorios.php" >
+       <span class="info-box-icon bg-olive">
+        <i class="fa fa-bar-chart"></i>
+       </span>
+      </a>
+      <div class="info-box-content"><h4>Relatórios</h4></div>
      </div>                  
     </div>
    </div> 
