@@ -11,4 +11,17 @@
   $WIEGAND = $row['CartaoWiegand'];
   $ABATRACK = $row['CartaoAba'];
   $SMARTCARD = $row['CartaoSmart'];
+  $Almoxarifado = $row['Almox'];
+   if ($Almoxarifado == "1") {
+     $RecebePeca = "0";
+     $CadastraPeca = "1";
+   }
+   elseif ($Almoxarifado === "2") {
+     $RecebePeca = "1";
+     $CadastraPeca = "0";
+   }
+   elseif ($Almoxarifado === "3") {
+     $RecebePeca = "1";
+     $CadastraPeca = "1";
+   }
 ?>
