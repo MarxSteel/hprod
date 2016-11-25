@@ -4,6 +4,15 @@ require_once 'init.php';
 $cHome = "active";
 $PDO = db_connect();
 require 'QueryUser.php';
+  $ChamaLaudo = "SELECT * FROM laudo ORDER BY id DESC";
+  $L1 = $PDO->prepare($ChamaLaudo);
+  $L1->execute();
+  $ChamaLaudo2 = "SELECT * FROM laudo WHERE Status='2' ORDER BY id DESC";
+  $L12 = $PDO->prepare($ChamaLaudo2);
+  $L12->execute();
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,183 +27,163 @@ require 'QueryUser.php';
  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+ <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 </head>
-<body class="hold-transition skin-blue-light fixed sidebar-mini">
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
  <header class="main-header">
-  <a href="#" class="logo">
-   <span class="logo-mini"><img src="dist/img/logo/logoWhite.png" width="50"/></span>
-   <span class="logo-lg"><img src="dist/img/logo/logoWhite.png" width="180" /></span>
-  </a>
   <nav class="navbar navbar-static-top">
-   <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-    <span class="sr-only">Minizar Navegação</span>
-   </a>
-   <div class="navbar-custom-menu">
-    <ul class="nav navbar-nav">
-     <li class="dropdown user user-menu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-       <span class="hidden-xs"><?php echo $NomeUserLogado; ?></span>
-      </a>
-      <ul class="dropdown-menu">
-       <li class="user-header">
-        <p><?php echo $NomeUserLogado; ?></p>
-       </li>
-       <li class="user-footer">
-        <div class="pull-left">
-         <a href="user/perfil.php" class="btn btn-info">Dados de Perfil</a>
-        </div>
-        <div class="pull-right">
-         <a href="logout.php" class="btn btn-danger">Sair</a>
-        </div>
-       </li>
-      </ul>
-     </li>
-     <li>
-       <a href="logout.php" class="btn btn-danger btn-flat">Sair</a>
-     </li>
-    </ul>
+   <div class="container">
+    <div class="navbar-header">
+     <a href="" class="navbar-brand"><img src="dist/img/logo/logoWhite.png" width="140"/></a>
     </div>
-    </nav>
-  </header>
-  <aside class="main-sidebar">
-   <section class="sidebar">
-    <?php include_once 'menuLateral.php'; ?>
-    </section>
-  </aside>
-<div class="content-wrapper">
- <section class="content-header">
-  <h1>Página Inicial<small><?php echo $titulo; ?></small></h1>
- </section>
- <section class="content">
-  <div class="row">
-   <?php if ($PMontagem === "1") { ?>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="P2/Montagem.php" >
-       <span class="info-box-icon bg-aqua">
-        <i class="fa fa-wrench"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Montagem<br /><h4>CADASTRO</h4></div>
-     </div>                  
+    <div class="navbar-custom-menu">
+     <ul class="nav navbar-nav">
+      <li class="dropdown user user-menu">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="hidden-xs"><?php echo $NomeUserLogado; ?></span>
+       </a>
+      </li>
+      <li class="dropdown user user-menu">
+       <a href="logout.php" class="btn btn-danger btn-flat">SAIR</a>
+      </li>
+     </ul>
     </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="P2/Pendentes.php" >
-       <span class="info-box-icon bg-red">
-        <i class="fa fa-exclamation-triangle"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Montagem<br /><h4>PENDENTES</h4></div>
-     </div>                  
+   </div>
+  </nav>
+ </header>
+  <div class="content-wrapper">
+    <div class="container">
+      <section class="content-header">
+        <h1>Almoxarifado - Controle de Laudos de Teste</h1>
+      </section>
+      <section class="content">
+      <?php
+      if (isset($_GET["mensagem"])) 
+      {
+       echo '<div class="alert alert-warning alert-dismissible">';
+       echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+       echo '<h4><i class="icon fa fa-exclamation"></i> Atenção!</h4>';
+       echo $_GET["mensagem"]; 
+       echo '</div>';
+      }
+      ?>
+      <div class="box box-default">
+       <div class="box-header with-border">
+        <h3 class="box-title">LISTA DE PEDIDOS DE LAUDO DE TESTE</h3>
+       </div>
+       <div class="box-body">
+        <table id="laudos" class="table table-bordered table-striped">
+         <thead>
+          <tr>
+           <th width="10" >#</th>
+           <th width="50" >Data</th>
+           <th>Item</th>
+           <th width="35" >Status</th>
+           <th width="10" ></th>
+           <th width="10" ></th>
+          </tr>
+         </thead>
+         <tbody>
+          <?php 
+            while ($L = $L1->fetch(PDO::FETCH_ASSOC)): 
+             echo '<tr>';
+              echo '<td>' . $L['id'] . '</td>';
+              echo '<td>' . $L['dataCadastro'] . '</td>';
+              echo '<td>' . $L['Item'] . '</td>';
+              $Status = $L['Status'];
+              if ($Status === "1") 
+              {
+               echo '<td>';
+               echo '<button class="btn bg-orange btn-block btn-xs disabled">ENVIADO</button>';
+               echo '</td>';
+               echo '<td><a class="btn bg-olive btn-block btn-xs" href="';
+                echo "javascript:abrir('Recebe.php?ID=" . $L['id'] . "');";
+                echo '"><i class="fa fa-plus"> RECEBER</i></a></td>';
+              }
+              elseif ($Status === "2") 
+              {
+               echo '<td>';
+               echo '<button class="btn btn-info btn-block btn-xs disabled">AGUARDANDO REVISÃO</button>';
+               echo '</td>';
+               echo '<td><a class="btn bg-navy btn-block btn-xs" href="';
+                echo "javascript:abrir('Preencher.php?ID=" . $L['id'] . "');";
+                echo '"><i class="fa fa-plus"> LAUDO</i></a></td>';
+              }
+              elseif ($Status === "3") 
+              {
+               echo '<td>';
+               echo '<button class="btn btn-success btn-block btn-xs disabled">APROVADO</button>';
+               echo '</td>';
+               $LkL = $L['Laudo'];
+               echo '<td>';
+                if ($RecebePeca === "1") 
+                {
+                 echo '<a href="laudos/' . $LkL . ' " target="_blank" class="btn btn-default btn-xs"><i class="fa fa-download"></i> BAIXAR </a>';
+                }
+                else{
+                }
+                echo '</td>';
+              }
+              elseif ($Status === "4") 
+              {
+               echo '<td>';
+               echo '<button class="btn btn-danger btn-block btn-xs disabled">REPROVADO</button>';
+               echo '</td>';
+               $LkL = $L['Laudo'];
+               echo '<td>';
+                if ($RecebePeca === "1") 
+                {
+                 echo '<a href="laudos/' . $LkL . ' " target="_blank" class="btn btn-default btn-xs"><i class="fa fa-download"></i> BAIXAR </a>';
+                }
+                else{
+                }
+                 echo '</td>';
+              }
+              echo '<td><a class="btn btn-default btn-block btn-xs" href="';
+              echo "javascript:abrir('vProduto.php?ID=" . $L['id'] . "');";
+              echo '"><i class="fa fa-search"> </i></a></td>';
+             echo '</tr>';
+             endwhile;
+          ?>
+          </tbody>
+        </table>
+       </div>
+      </div>
+      </section>
+      <!-- /.content -->
     </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="P2/MeusEquips.php" >
-       <span class="info-box-icon bg-green">
-        <i class="fa fa-file-code-o"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Montagem<br /><h4>MEUS EQUIPAMENTOS</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="pedidos/dashboard.php" >
-       <span class="info-box-icon bg-maroon">
-        <i class="fa fa-newspaper-o"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><h4>PEDIDOS</h4></div>
-     </div>                  
-    </div>
-   </div> 
-
-   <?php } else{ } if ($PReteste === "1") { ?>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="P2/Reteste.php" >
-       <span class="info-box-icon bg-yellow">
-        <i class="fa fa-refresh"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Contrl. Reteste<br /><h4>RETESTE</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="P2/QuantGeral.php" >
-       <span class="info-box-icon bg-navy">
-        <i class="fa fa-server"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Contrl. Reteste<br /><h4>TODOS OS EQUIPAMENTOS</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="Imprime/dashboard.php" >
-       <span class="info-box-icon bg-purple">
-        <i class="fa fa-print"></i>
-       </span>
-      </a>
-      <div class="info-box-content">Contrl. Reteste<br /><h4>IMPRESSÃO</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <?php } else{ } if ($PermAdm === "1") { ?>
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="adm/usuarios.php" >
-       <span class="info-box-icon bg-blue">
-        <i class="fa fa-users"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><h4>Cadastro de Usuários</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="box box-widget widget-user">
-     <div class="info-box">
-      <a href="adm/relatorios.php" >
-       <span class="info-box-icon bg-olive">
-        <i class="fa fa-bar-chart"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><h4>Relatórios</h4></div>
-     </div>                  
-    </div>
-   </div> 
-   <?php } else { } ?>
-
-
- </section>
-</div><!-- CONTENT-WRAPPER -->
+    <!-- /.container -->
+  </div>
 <?php include_once 'footer.php'; ?>
-
-</div>
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="plugins/fastclick/fastclick.js"></script>
 <script src="dist/js/app.min.js"></script>
-<script src="dist/js/pages/dashboard.js"></script>
 <script src="dist/js/demo.js"></script>
-</body>
+<script>
+  $(function () {
+    $('#laudos').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": false,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<script language="JavaScript">
+function abrir(URL) { 
+  var width = 1200;
+  var height = 650;
+  var left = 99;
+  var top = 99;
+  window.open(URL,'janela', 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no');
+}
+</script>
 </html>
