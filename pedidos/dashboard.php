@@ -79,6 +79,18 @@ $dt = date("d/m/Y - H:i:s");
  </section>
  <section class="content">
   <div class="row">
+    <?php if ($PermAdm === "1") { ?>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="info-box">
+     <a data-toggle="modal" data-target="#novoPed"">
+      <span class="info-box-icon bg-purple">
+       <i class="fa fa-plus"></i>
+      </span>
+     </a>
+     <div class="info-box-content"><br /><h4>Nova Montagem</h4></div>
+    </div>
+   </div>
+   <?php } else { } ?>
       <div class="col-md-12">
        <div class="nav-tabs-custom">
         <ul class="nav nav-tabs pull-right">
@@ -155,6 +167,65 @@ $dt = date("d/m/Y - H:i:s");
        </div>
       </div>
 
+<!-- MODAL DE CADASTRO DE FIRMWARE DE LINHA -->
+<div id="novoPed" class="modal fade" role="dialog">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header bg-purple">
+    <button type="button" class="close" data-dismiss="modal">X</button>
+     <h4 class="modal-title">Novo Pedido</h4>
+   </div>
+   <div class="modal-body">
+    <form name="EdCad" id="name" method="post" action="" enctype="multipart/form-data">
+     <div class="col-xs-4">Data do Prazo
+      <div class="input-group">
+       <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+        <input type="text" name="Prazo" class="form-control" minlength="10" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required="required">
+      </div>
+     </div>
+     <div class="col-md-4 col-xs-12">Modelo
+      <input class="form-control" type="text" name="modelo" required="required">
+     </div>
+     <div class="col-md-4 col-xs-12">Quantidade
+      <input class="form-control" type="number" name="qnt" required="required">
+     </div>
+     <div class="col-xs-12">Observações
+      <textarea name="obs" cols="45" rows="3" class="form-control" id="obs"></textarea><hr>
+     </div>
+     <div class="pull-right">
+      <input name="novoProduto" type="submit" class="btn bg-purple btn-flat" id="novoProduto" value="CADASTRAR PRODUTO"  /> 
+      <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">FECHAR</button>
+     </div>
+    </form>
+    <?php
+    if(@$_POST["novoProduto"]){
+     $prazo = $_POST["prazo"];
+     $modelo = $_POST["modelo"];
+     $qnt = $_POST["qnt"];
+      $Obs = str_replace("\r\n", "<br/>", strip_tags($_POST["obs"]));
+
+     // $qnt = data
+      $Add = $PDO->query("INSERT INTO pedido (NomeUser, DataCadastro, DataPrazo, Obs, Modelo, Quantidade, Status) VALUES ('$NomeUserLogado', '$dt', '$prazo', '$Obs', '$modelo', '$qnt', 'P')");
+        if ($Add) {
+         echo '
+              <script type="text/JavaScript">alert("Cadastrado com Sucesso!");
+              location.href="dashboard.php"</script>';
+        }
+        else{
+         echo '<script type="text/javascript">alert("Não foi possível. Erro: 0x03");</script>';
+        }
+
+
+      }
+
+      ?>
+
+   </div>
+   <div class="modal-footer"></div>
+  </div>
+ </div>
+</div>
+<!-- FINAL DO MODAL DE CADASTRO DE FIRMWARE DE LINHA -->
 
 
   </div>
