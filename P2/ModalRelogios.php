@@ -967,7 +967,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/12/Orion.php');">
+          <a href="javascript:abrir('Cad/12/orion.php');">
            <span class="info-box-icon bg-orange"><h2>Orion</h2></span>
           </a>
           <div class="info-box-content">
@@ -975,22 +975,6 @@
            Orion 2, 5<br />
            Orion SF <br />
            Orion CR
-           </span>
-          </div>
-         </div>                 
-        </div>
-       </div>
-       <div class="col-md-6">
-        <div class="box box-widget">
-         <div class="info-box">
-          <a href="javascript:abrir('Cad/12/card.php');">
-           <span class="info-box-icon bg-black"><h2>Plus<br /></h2></span>
-          </a>
-          <div class="info-box-content">
-           <span class="info-box-text">
-           Plus<br />
-           Plus Bio<br />
-           Prot (I, II Fixo e Movel)
            </span>
           </div>
          </div>                 
