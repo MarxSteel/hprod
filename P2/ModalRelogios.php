@@ -730,7 +730,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/AcessoSF.php');">
+          <a href="javascript:abrir('Cad/10/AcessoSF.php');">
            <span class="info-box-icon bg-aqua">SF</span>
           </a>
           <div class="info-box-content">
@@ -742,7 +742,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/PontoSF.php');">
+          <a href="javascript:abrir('Cad/10/PontoSF.php');">
            <span class="info-box-icon bg-red">SF</span>
           </a>
           <div class="info-box-content">
@@ -754,7 +754,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/Ponto8x.php');">
+          <a href="javascript:abrir('Cad/10/Ponto8x.php');">
            <span class="info-box-icon bg-purple">8x</span>
           </a>
           <div class="info-box-content">
@@ -766,7 +766,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/Acesso8x.php');">
+          <a href="javascript:abrir('Cad/10/Acesso8x.php');">
            <span class="info-box-icon bg-green">8x</span>
           </a>
           <div class="info-box-content">
@@ -778,7 +778,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/Argos.php');">
+          <a href="javascript:abrir('Cad/10/Argos.php');">
            <span class="info-box-icon bg-orange">A</span>
           </a>
           <div class="info-box-content">
