@@ -22,6 +22,9 @@ $QryUser->execute();
  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
  <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css">
+ <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+
+
 </head>
 <body class="hold-transition skin-blue-light fixed sidebar-mini">
 <div class="wrapper">
@@ -75,7 +78,7 @@ $QryUser->execute();
   <?php if ($PermAdm === "1") { ?>
      <div class="col-md-8">
       <div class="info-box">
-       <table id="usuario" class="table table-responsive">
+        <table id="laudos" class="table table-bordered table-striped">
         <thead>
          <tr>
           <th>#</th>
@@ -96,9 +99,27 @@ $QryUser->execute();
           echo '<a class="btn btn-danger btn-xs" href="javascript:abrir(';
           echo "'DeletaUser.php?ID=" . $User['codLogin'] . "');";
           echo '"><i class="fa fa-remove"></i></a>&nbsp;';
-         echo "</td>";
-         echo "</tr>";
-         endwhile;
+          echo '<a class="btn btn-primary btn-xs" href="javascript:abrir(';
+          echo "'TrocaSenha.php?ID=" . $User['codLogin'] . "');";
+          echo '"><i class="fa fa-lock"></i> Trocar Senha</a>&nbsp;';
+          echo '<div class="btn-group">
+                 <button type="button" class="btn btn-default btn-xs">
+                  <i class="fa fa-refresh"></i> Trocar Privilégios
+                 </button>';
+          echo '<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+             <span class="caret"></span><span class="sr-only"></span></button>';
+          echo '<ul class="dropdown-menu" role="menu">';
+          echo '<li><a href="javascript:abrir(';
+          echo "'PrivProd.php?ID=" . $User['codLogin'] . "');";
+          echo '">Produção</a></li>';
+          echo '<li><a href="javascript:abrir(';
+          echo "'PrivAlmox.php?ID=" . $User['codLogin'] . "');";
+          echo '">Almoxarifado</a></li>
+                </ul>
+                </div>
+              </td>
+             </tr>';
+             endwhile;
         ?>
         </tbody>
         </table>  
@@ -122,16 +143,6 @@ $QryUser->execute();
        </span>
       </a>
       <div class="info-box-content"><br /><h4>Novo Usuário Almoxarifado</h4></div>
-     </div>
-    </div>
-    <div class="col-md-4 col-sm-6 col-xs-12">
-     <div class="info-box">
-      <a data-toggle="modal" data-target="#NovoGeral"">
-       <span class="info-box-icon bg-red">
-        <i class="fa fa-plus"></i>
-       </span>
-      </a>
-      <div class="info-box-content"><br /><h4>Novo Usuário GERAL</h4></div>
      </div>
     </div>
   <?php include_once 'ModalUser.php';  } else{ ?>
@@ -158,28 +169,23 @@ $QryUser->execute();
 <?php include_once '../footer.php'; ?>
 </div>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="../plugins/fastclick/fastclick.js"></script>
 <script src="../dist/js/app.min.js"></script>
-<script src="../dist/js/pages/dashboard.js"></script>
 <script src="../dist/js/demo.js"></script>
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script>
   $(function () {
-    $('#usuario').DataTable({
+    $('#laudos').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": true,
       "ordering": false,
       "info": true,
-      "autoWidth": true
+      "autoWidth": false
     });
-    $("#cad373").DataTable();
-    $("#cadACESSO").DataTable();
-    $("#carto").DataTable();
   });
 </script>
 
@@ -188,8 +194,8 @@ $QryUser->execute();
 <script language="JavaScript">
 function abrir(URL) {
  
-  var width = 950;
-  var height = 650;
+  var width = 1000;
+  var height = 500;
  
   var left = 99;
   var top = 99;
