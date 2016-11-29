@@ -41,8 +41,8 @@ include_once '../../../QueryUser.php';
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li>CADASTRO DE EQUIPAMENTO: VELTI I</li>
+      <li><code>BIOMETRIA + SMART CARD</code></li>
      </ol>
     </section>
    <section class="content">
@@ -54,7 +54,7 @@ include_once '../../../QueryUser.php';
       <div class="span12">
        Para continuar, configure o relógio para comunicação
        <strong>TCP/IP</strong> com o IP: <br /><h3><code><?php echo $MeuIP; ?></code></h3><br /><br />
-       <a class="btn btn-success btn-block btn-flat" href="G_E2.php?Sec=14"><i class="icon-ok icon-white" >Próximo passo</a>
+       <a class="btn btn-success btn-block btn-flat" href="I_E2.php?Sec=665"><i class="icon-ok icon-white" >Próximo passo</a>
        <br /><br />
       </div>
      </div>
