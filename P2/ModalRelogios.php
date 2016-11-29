@@ -840,3 +840,181 @@
   </div>
 </div>
 <!-- FIM DO MODAL DO VELTI 373 E ACESSO-->
+<!-- MODAL DO DIXI IDNOX-->
+<div class="modal fade " id="idnox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastrar Equipamento: DIXI IDNOX
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/LT-PROX_E1.php');">
+           <span class="info-box-icon bg-black"><h2>LT<br />Prox</h2></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">IDNOX LT-PROX</span>
+           <span class="info-box-number">0003800213<code>XXXXXXX</code></span>
+           <span class="progress-description">PROXIMIDADE</span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/SMART-PROX_E1.php');">
+           <span class="info-box-icon bg-red"><h3>Smart<br />Prox</h3></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">IDNOX SMART-PROX</span>
+           <span class="info-box-number">0003800214<code>XXXXXXX</code></span>
+           <span class="progress-description"> PROXIMIDADE + SMART CARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/BIO_E1.php');">
+           <span class="info-box-icon bg-blue">Bio</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">IDNOX BIO</span>
+           <span class="info-box-number">0003800215<code>XXXXXXX</code></span>
+           <span class="progress-description">BIOMETRIA</span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/BIO-PROX_E1.php');">
+           <span class="info-box-icon bg-green"><h3>Bio<br />Prox</h3></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">IDNOX LT-BioProx</span>
+           <span class="info-box-number">0003800216<code>XXXXXXX</code></span>
+           <span class="progress-description"> BIOMETRIA + PROXIMIDADE</span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/08/LT2_E1.php');">
+           <span class="info-box-icon bg-red">LT</span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">IDNOX </span>
+           <span class="info-box-number">0003800180<code>XXXXXXX</code></span>
+           <span class="progress-description"> BIOMETRIA + PROXIMIDADE + SMART CARD</span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+         </div>                 
+        </div>
+       </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO DIXI IDNOX-->
+
+
+
+
+<!-- MODAL DOS CARTOGRAFICOS-->
+<div class="modal fade " id="outros" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+         Cadastro de Equipamentos
+        </h4>
+      </div>
+      <div class="modal-body">
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/12/card.php');">
+           <span class="info-box-icon bg-blue"><h2>Card<br /></h2></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">
+           Card 2, 5<br />
+           Card SF, Card Sirene <br />
+           Card +
+           </span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/12/Orion.php');">
+           <span class="info-box-icon bg-orange"><h2>Orion</h2></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">
+           Orion 2, 5<br />
+           Orion SF <br />
+           Orion CR
+           </span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/12/card.php');">
+           <span class="info-box-icon bg-black"><h2>Plus<br /></h2></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">
+           Plus<br />
+           Plus Bio<br />
+           Prot (I, II Fixo e Movel)
+           </span>
+          </div>
+         </div>                 
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="box box-widget">
+         <div class="info-box">
+          <a href="javascript:abrir('Cad/12/vigia.php');">
+           <span class="info-box-icon bg-black"><h2>Vigia<br /></h2></span>
+          </a>
+          <div class="info-box-content">
+           <span class="info-box-text">
+           Vigia Bastão<br />
+           Vigia Prox<br />
+           </span>
+          </div>
+         </div>                 
+        </div>
+       </div>       
+
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<!-- FIM DO MODAL DO DIXI IDNOX-->

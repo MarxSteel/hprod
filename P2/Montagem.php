@@ -180,29 +180,9 @@ require '../QueryUser.php';
    </div>
    <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-     <a data-toggle="modal" data-target="#7x">
+     <a data-toggle="modal" data-target="#outros">
       <span class="info-box-icon bg-default">
       <img src="../dist/img/relogios/orion-cr.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><h4>Linha 7x</h4></div>
-    </div>
-   </div>
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="carto">
-      <span class="info-box-icon bg-default">
-      <img src="../dist/img/relogios/plus.png" align="center" width="130" />
-      </span>
-     </a>
-     <div class="info-box-content"><h4>Cartográficos</h4></div>
-    </div>
-   </div>
-   <div class="col-md-3 col-sm-6 col-xs-12">
-    <div class="info-box">
-     <a data-toggle="modal" data-target="outros">
-      <span class="info-box-icon bg-default">
-      <img src="../dist/img/relogios/vigia.png" align="center" width="50" />
       </span>
      </a>
      <div class="info-box-content"><h4>Outros</h4></div>
