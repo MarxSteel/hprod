@@ -22,6 +22,6 @@ if (isset($_SESSION['MeuLogin'])) {
     // registrando os novos dados na session.
     $_SESSION['MeuLogin'] = array("id" => $codLogin,"login" => $login,"chave" => $chave,"hora" => $hora); 
 } else {
-    header("location: index.php?erro=Aceso restrito");
+    header("location: http://192.168.1.1/sistema/almoxarifado/index.php?erro=Aceso restrito");
 }
 ?>
