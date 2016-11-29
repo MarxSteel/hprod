@@ -41,8 +41,8 @@ $Valida = $_GET['Sec'];
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li>CADASTRO DE EQUIPAMENTO: VELTI I</li>
+      <li><code>BIOMETRIA + SMART CARD</code></li>
      </ol>
     </section>
     <?php
