@@ -577,7 +577,7 @@
            <span class="info-box-icon bg-aqua">A</span>
           </a>
           <div class="info-box-content">
-           <span class="info-box-text">VELTI A</span>
+           <span class="info-box-text">VELTI A <code>DISPLAY GR&Aacute;FICO</code></span>
            <span class="info-box-number">0003900186<code>XXXXXXX</code></span>
            <span class="progress-description">BIOMETRIA + PROX + BARRAS + SMARTCARD</span>
           </div>
@@ -591,7 +591,7 @@
            <span class="info-box-icon bg-red">B</span>
           </a>
           <div class="info-box-content">
-           <span class="info-box-text">VELTI B</span>
+           <span class="info-box-text">VELTI B <code>DISPLAY GR&Aacute;FICO</code></span>
            <span class="info-box-number">0003900185<code>XXXXXXX</code></span>
            <span class="progress-description">BIOMETRIA + PROX + BARRAS</span>
           </div>

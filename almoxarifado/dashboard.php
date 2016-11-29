@@ -60,6 +60,18 @@ require 'QueryUser.php';
       </section>
       <section class="content">
       <?php
+      if ($CadastraPeca === "1") { ?>
+       <div class="row">
+        <div class="col-md-4 col-xs-12">
+         <div class="info-box">
+          <a data-toggle="modal" data-target="#novoLaudo"">
+           <span class="info-box-icon btn-danger"><i class="fa fa-plus"></i></span>
+          </a>
+          <div class="info-box-content"><br /><h4>Cadastrar Nova nota</h4></div>
+         </div>
+        </div>
+       </div>
+       <?php } else{ } 
       if (isset($_GET["mensagem"])) 
       {
        echo '<div class="alert alert-warning alert-dismissible">';
@@ -69,6 +81,7 @@ require 'QueryUser.php';
        echo '</div>';
       }
       ?>
+
       <div class="box box-default">
        <div class="box-header with-border">
         <h3 class="box-title">LISTA DE PEDIDOS DE LAUDO DE TESTE</h3>
@@ -156,7 +169,9 @@ require 'QueryUser.php';
     </div>
     <!-- /.container -->
   </div>
-<?php include_once 'footer.php'; ?>
+<?php 
+include_once 'ModalAlmox.php';
+include_once 'footer.php'; ?>
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
