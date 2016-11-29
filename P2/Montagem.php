@@ -187,7 +187,7 @@ require '../QueryUser.php';
      </a>
      <div class="info-box-content"><h4>Outros</h4></div>
     </div>
-   </div>
+   </div> 
   </div>
  </section>
 </div><!-- CONTENT-WRAPPER -->
