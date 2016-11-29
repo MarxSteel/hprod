@@ -17,20 +17,14 @@
      <div class="col-xs-6">Senha
       <input name="password" type="password" class="form-control" id="password" required="required">
      </div>
-     <div class="col-xs-12">Laudos</div>
-      <div class="col-xs-6">Pode Cadastrar Pedidos de Laudo?
+     <div class="col-xs-12">Nivel de Acesso</div>
+      <div class="col-xs-12">
        <select class="form-control" name="cadLaudo" required="required">
         <option value="" checked="checked"> >>SELECIONE<<</option>
-        <option value="9"> Pode cadastrar pedido</option>
-        <option value="5"> Não pode Cadastrar</option>
+        <option value="1"> Pode Cadastrar novo pedido, mas não pode liberar</option>
+        <option value="2"> Pode liberar ou reprovar, mas não pode cadastrar novo pedido</option>
+        <option value="3"> Pode liberar ou reprovar e cadastrar nova solicitação</option>
        </select>
-     </div>
-     <div class="col-xs-6">Pode Receber / Dar Baixa em Laudo?
-      <select class="form-control" name="respLaudo" required="required">
-       <option value="" checked="checked"> >>SELECIONE<<</option>
-       <option value="9"> Pode responder laudo</option>
-       <option value="5"> Não pode responder</option>
-      </select>
      </div>
      <div class="col-xs-12"><br />
        <input name="cadAlmox" type="submit" class="btn btn-success btn-block btn-flat" id="cadAlmox" value="CADASTRAR USUÁRIO"  />
@@ -42,11 +36,10 @@
      $nick = $_POST["nick"];
      $senha = $_POST["password"];
      $CadLaudo = $_POST["cadLaudo"];
-     $respLaudo = $_POST["respLaudo"];
      $passwd = md5($senha);
      $ativo = "1";
      $user_level = "2";
-      $CadAlmox = $PDO->query("INSERT INTO login (Nome, login, senha, PrivLaudo, CadLaudo) VALUES ('$NomeCompleto', '$nick', '$passwd', '$respLaudo', '$CadLaudo')");
+      $CadAlmox = $PDO->query("INSERT INTO login (Nome, login, senha, Almox) VALUES ('$NomeCompleto', '$nick', '$passwd', '$CadLaudo')");
       if ($CadAlmox) {
         echo '<script type="text/javascript">alert("Usuário Adicionado!");</script>';
         echo '<script type="text/javascript">location.href="usuarios.php"</script>';
