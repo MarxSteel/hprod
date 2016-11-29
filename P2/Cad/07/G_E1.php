@@ -42,7 +42,7 @@ include_once '../../../QueryUser.php';
     <section class="content-header">
      <ol class="breadcrumb">
       <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li><code>BIOMETRIA + PROXIMIDADE (<strong>RFID</strong>)</code></li>
      </ol>
     </section>
    <section class="content">
