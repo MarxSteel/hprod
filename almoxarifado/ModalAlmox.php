@@ -37,7 +37,7 @@
       $Item = $_POST['item'];
       $DataCadastro = date('d/m/Y - H:i:s');
       $Obs = str_replace("\r\n", "<br/>", strip_tags($_POST["obs"]));
-       $InsLaudo = $PDO->query("INSERT INTO laudo (codigo, Item, qtTeste, qtTotal, dataCadastro, usrCad, Obs, Status) VALUES ('$Cod', '$Item', '$QtTeste', '$QtTotal', '$DataCadastro', '$NomeUserLogado', 'Obs', '1')");
+       $InsLaudo = $PDO->query("INSERT INTO laudo (codigo, Item, qtTeste, qtTotal, dataCadastro, usrCad, Obs, Status) VALUES ('$Cod', '$Item', '$QtTeste', '$QtTotal', '$DataCadastro', '$NomeUserLogado', '$Obs', '1')");
        if ($InsLaudo)
        {
         $Ev = "Adicionado novo pedido de teste";
