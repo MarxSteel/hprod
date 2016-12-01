@@ -47,12 +47,12 @@ include_once '../../../QueryUser.php';
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li>CADASTRO DE EQUIPAMENTO: VELTI I</li>
+      <li><code>BIOMETRIA + SMART CARD</code></li>
      </ol>
     </section>
     <?php
-    if ($Valida <> '14') {
+    if ($Valida <> '665') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -68,7 +68,7 @@ include_once '../../../QueryUser.php';
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '14') {
+    elseif ($Valida == '665') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -140,14 +140,14 @@ include_once '../../../QueryUser.php';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4><i class="icon fa fa-ban"></i> Atenção!</h4>';
         echo 'EMPREGADOR ENVIADO, RESPOSTA DO RELÓGIO:<strong>' . $msg1 . '</strong>.';
-        echo '<a class="btn btn-success btn-block" href="G_E3.php?Sec=21"><iclass="icon-ok icon-white" >Próximo passo</a> <br /><br />';
+        echo '<a class="btn btn-success btn-block" href="I_E3.php?Sec=241"><iclass="icon-ok icon-white" >Próximo passo</a> <br /><br />';
         echo '</div>';
        } else if ($msg1 <> "01+EE+00") {
         echo '<div class="alert alert-success-dismissable">';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4><i class="icon fa fa-ban"></i> Atenção!</h4>';
         echo 'EMPREGADOR ENVIADO, RESPOSTA DO RELÓGIO:<strong>' . $msg1 . '</strong>.';
-        echo '<a class="btn btn-success btn-block" href="G_E3.php?Sec=21"><iclass="icon-ok icon-white" >Próximo passo</a> <br /><br />';
+        echo '<a class="btn btn-success btn-block" href="I_E3.php?Sec=241"><iclass="icon-ok icon-white" >Próximo passo</a> <br /><br />';
         echo '</div>';
        }
      }

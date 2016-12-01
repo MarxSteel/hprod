@@ -43,12 +43,12 @@ include_once '../../../QueryUser.php';
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li>CADASTRO DE EQUIPAMENTO: VELTI I</li>
+      <li><code>BIOMETRIA + SMART CARD</code></li>
      </ol>
     </section>
     <?php
-    if ($Valida <> '21') {
+    if ($Valida <> '241') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -64,7 +64,7 @@ include_once '../../../QueryUser.php';
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '21') {
+    elseif ($Valida == '241') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -74,53 +74,14 @@ include_once '../../../QueryUser.php';
       echo '<h3 class="page-title">Cadastro de Referênncia</h3>';
       echo 'Colaborador: <code>TESTE DE FABRICA</code></br >';
       ?>
-      <div class="col-xs-6"><BR />
-       <span data-toggle="modal" data-target="#Wieg" class="btn btn-danger btn-block btn-lg">
-        ENVIAR CARTÃO WIEGAND
-       </span>
-       </div>
-      <div class="col-xs-6"><BR />
-       <span data-toggle="modal" data-target="#ABA" class="btn btn-info btn-block btn-lg">
-        ENVIAR CARTÃO ABARACK
-       </span>
-       </div>
-       </div>
-      <!-- INÍCIO DOS MODALS -->
-      <!-- MODAL DE ENVIAR WIEGAND -->
-      <div class="modal fade" id="Wieg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <code><span aria-hidden="true">&times;</span></code>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Cadastrar Cartão Wiegand</h4>
-         </div>
-         <div class="modal-body">
-          <div class="alert alert-warning alert-dismissable">
-           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-           <h4><i class="icon fa fa-alert"></i> Atenção!</h4> você está prestes a cadatrar cartão WIEGAND. Tem certeza?
-          </div>
-          <div class='col-xs-4'>
-            COLABORADOR:<br />
-            NUM. PIS:<br />
-            CARTÃO DE TESTE:<br />
-            CARTÃO DO RETESTE:
-          </div>
-          <div class='col-xs-8'>
-            TESTE DE FABRICA - PROXIMIDADE W<br />
-           <strong><code>900000000022</code></strong><br />
-           <strong><code><?php echo $WIEGAND; ?></code></strong><br />
-           <strong><code><?php echo $Wteste; ?></code></strong>
-          </div>
           <form name="enviaWiegand" id="EnviaWiegand" method="post" action="" enctype="multipart/form-data">
            <div class='col-xs-12'><br /><br />
-            <input name="EnviaW" type="submit" class="btn btn-danger btn-block btn-lg" id="EnviaW" value="CADASTRAR CARTÕES WIEGAND" />
+            <input name="EnviaW" type="submit" class="btn btn-danger btn-block btn-lg" id="EnviaW" value="CADASTRAR CARTÕES" />
            </div>
           </form>
           <?php
           if(@$_POST["EnviaW"]){
-           $cod_msg = "03+EU+00+2+I[900000000023[TESTE DE FABRICA 01[0[2[" . $WIEGAND . "}" . $Wteste . "]I[900000000029[TESTE DE FABRICA 02[0[1[1";
+           $cod_msg = "03+EU+00+2+I[900000000023[TESTE DE FABRICA 01[0[2[" . $SMARTCARD . "}" . $Mteste . "]I[900000000029[TESTE DE FABRICA 02[0[1[1";
            $cod_asc = gerar($cod_msg);
            $gera_asc = str_replace(" ","",$cod_asc);
            $port    = 3000;
@@ -134,80 +95,12 @@ include_once '../../../QueryUser.php';
             socket_close($socket);
 
            if ($msg1 == "03+EU+00") {
-            echo '<script type="text/JavaScript">alert("Cartão Cadastrado!");location.href="G_E4.php?Sec=42"</script>';
+            echo '<script type="text/JavaScript">alert("Cartão Cadastrado!");location.href="I_E4.php?Sec=773"</script>';
            }
            elseif ($msg1 <> "03+EU+00") {
-            echo '<script type="text/JavaScript">alert("Cartão Cadastrado!");location.href="G_E4.php?Sec=42"</script>';
+            echo '<script type="text/JavaScript">alert("Cartão Cadastrado!");location.href="I_E4.php?Sec=773"</script>';
            }
           }
-          ?>
-         </div>
-         <div class="modal-footer"></div>
-        </div>
-       </div>
-      </div>
-      <!-- FIM DO MODAL DE ENVIAR CARTÃO WIEGAND-->
-
-      <!-- INÍCIO DO MODAL DE ENVIAR CARTÃO ABA-->
-      <div class="modal fade" id="ABA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <code><span aria-hidden="true">&times;</span></code>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Cadastrar Cartão Wiegand</h4>
-         </div>
-         <div class="modal-body">
-          <div class="alert alert-info alert-dismissable">
-           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-           <h4><i class="icon fa fa-alert"></i> Atenção!</h4> você está prestes a cadatrar cartão ABATRACK. Tem certeza?
-          </div>
-          <div class='col-xs-4'>
-            COLABORADOR:<br />
-            NUM. PIS:<br />
-            CARTÃO DE TESTE:<br />
-            CARTÃO DO RETESTE:
-          </div>
-          <div class='col-xs-8'>
-            TESTE DE FABRICA - PROXIMIDADE ABATRACK<br />
-           <strong><code>900000000024</code></strong><br />
-           <strong><code><?php echo $ABATRACK; ?></code></strong><br />
-           <strong><code><?php echo $Ateste; ?></code></strong>
-          </div>
-          <form name="EnviaAba" id="EnviaAba" method="post" action="" enctype="multipart/form-data">
-           <div class='col-xs-12'><br /><br />
-            <input name="EnviaA" type="submit" class="btn btn-info btn-block btn-lg" id="EnviaA" value="CADASTRAR CARTÕES WIEGAND" />
-           </div>
-          </form>
-          <?php
-          if(@$_POST["EnviaA"]){
-           $cod_msg = "03+EU+00+2+I[900000000024[TESTE DE FABRICA 01[0[2[" . $ABATRACK . "}" . $Ateste . "]I[900000000029[TESTE DE FABRICA 02[0[1[1";
-           $cod_asc = gerar($cod_msg);
-           $gera_asc = str_replace(" ","",$cod_asc);
-           $port    = 3000;
-           $msg = hex2str($gera_asc);
-           $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
-            socket_set_option($socket, SOL_SOCKET, SO_RCVTIMEO, array('sec' => 1, 'usec' => 0));
-            socket_set_option($socket, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 0));
-             $result = socket_connect($socket, $MeuIP, $port) or die($M006);
-            socket_write($socket, $msg, strlen($msg)) or die($M002);
-            $msg1 = socket_read($socket,8192);
-            socket_close($socket);
-
-           if ($msg1 == "") {
-           }
-           elseif ($msg1 <> "03+EU+00") {
-            echo '<script type="text/JavaScript">alert("Cartão Cadastrado!");location.href="G_E4.php?Sec=42"</script>';
-           }
-          }
-          ?>
-         </div>
-         <div class="modal-footer"></div>
-        </div>
-       </div>
-      </div>
-      <?php
       }
       else{
 

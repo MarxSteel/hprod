@@ -41,12 +41,12 @@ $Valida = $_GET['Sec'];
    <div class="container">
     <section class="content-header">
      <ol class="breadcrumb">
-      <li>CADASTRO DE EQUIPAMENTO: VELTI G</li>
-      <li><code>D. ALFANUMÉRICO 16X2 | BIOMETRIA + PROXIMIDADE (<strong>RFID)</strong></code></li>
+      <li>CADASTRO DE EQUIPAMENTO: VELTI I</li>
+      <li><code>BIOMETRIA + SMART CARD</code></li>
      </ol>
     </section>
     <?php
-    if ($Valida <> '42') {
+    if ($Valida <> '773') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -62,7 +62,7 @@ $Valida = $_GET['Sec'];
       echo '</div>';
       echo '</section>';
     }
-    elseif ($Valida == '42') {
+    elseif ($Valida == '773') {
       echo '<section class="content">';
       echo '<div class="box box-default">';
       echo '<div class="box-header with-border">';
@@ -73,71 +73,45 @@ $Valida = $_GET['Sec'];
      </div>
      <div class="box-body">
       <form name="cadastrar_anuncio" id="name" method="post" action="" enctype="multipart/form-data">
-       <table width="400" border="0" align="center">
-        <tr>
-         <div class="col-xs-5">PREFIXO (MODELO)
-          <input class="form-control" disabled="disabled" TYPE="text" VALUE="0003900198">
-         </div>
-         <div class="col-xs-7">NÚMERO DE SÉRIE
-          <input name="numREP" type="text" class="form-control" id="numREP" minlength="7" maxlength="7" required="required"/>
-         </div>
-        </tr>
-        <tr>
-         <div class="col-xs-12">HOS
-          <input class="form-control" type="text" id="hos" name="hos">
-         </div>
-        </tr>
-        <tr>
-         <div class="col-xs-12">BIOMETRIA
-          <select class="form-control" name="biometria" id="biometria" required="required">
-           <option value="" checked="checked"> >>SELECIONE<<</option>
-           <option value="01"> (512K) - 0300 Digitais<code> SUPREMA </code></option>
-           <option value="02"> (4MB) - 9600 Digitais<code> SUPREMA </code></option>
-           <option value="03"> (8MB) - 15000 Digitais<code> SUPREMA </code></option>
-           <option value="04"> (1MB) - 1.900 Digitais<code> CAPACITIVA </code></option>
-           <option value="05"> (4MB) - 9.600 Digitais<code> CAPACITIVA </code></option>
-           <option value="06"> (4MB) - 9.600 Digitais<code> DEDO VIVO </code></option>
-          </select>
-         </div>
-        </tr>
-        <tr>
-         <div class="col-xs-12">PROXIMIDADE
-          <select class="form-control" name="proximidade" id="proximidade" required="required">
-           <option value="" checked="checked"> >>SELECIONE<<</option>
-           <option value="01"> WIE - WIEGAND</option>
-           <option value="02"> ABA - ABATRACK</option>
-           <option value="03"> IND - INDALA</option>
-           <option value="04"> HID </option>
-           <option value="05"> ACU - Acura</option>
-           <option value="06"> PHID </option>
-          </select>
-         </div>
-        </tr>
-        <tr>
-         <div class="col-xs-12">Observações
-           <textarea name="descricao" cols="45" rows="3" class="form-control" id="descricao"></textarea>
-         </div>
-        </tr>
-        <tr>
-         <div class="col-xs-12"><br />
-           <input name="enviar" type="submit" class="btn btn-success btn-block" id="enviar" value="Cadastrar"  />
-         </div>
-        </tr>
-       </table>
+       <div class="col-xs-5">PREFIXO (MODELO)
+        <input class="form-control" disabled="disabled" TYPE="text" VALUE="0003900200">
+       </div>
+       <div class="col-xs-7">NÚMERO DE SÉRIE
+        <input name="numREP" type="text" class="form-control" minlength="7" maxlength="7" required="required"/>
+       </div>
+       <div class="col-xs-12">HOS
+        <input class="form-control" type="text" id="hos" name="hos">
+       </div>
+       <div class="col-xs-12">BIOMETRIA
+        <select class="form-control" name="biometria" id="biometria" required="required">
+         <option value="" checked="checked"> >>SELECIONE<<</option>
+         <option value="01"> (512K) - 0300 Digitais<code> SUPREMA </code></option>
+         <option value="02"> (4MB) - 9600 Digitais<code> SUPREMA </code></option>
+         <option value="03"> (8MB) - 15000 Digitais<code> SUPREMA </code></option>
+         <option value="04"> (1MB) - 1.900 Digitais<code> CAPACITIVA </code></option>
+         <option value="05"> (4MB) - 9.600 Digitais<code> CAPACITIVA </code></option>
+         <option value="06"> (4MB) - 9.600 Digitais<code> DEDO VIVO </code></option>
+        </select>
+       </div>
+       <div class="col-xs-12">Observações
+        <textarea name="descricao" cols="45" rows="3" class="form-control" id="descricao"></textarea>
+       </div>
+       <div class="col-xs-12"><br />
+        <input name="enviar" type="submit" class="btn btn-success btn-block" id="enviar" value="Cadastrar"  />
+       </div>
       </form>
       <?php
       if(@$_POST["enviar"]){
-       $prefixoREP = "0003900198";
+       $prefixoREP = "0003900200";
        $numREP = $_POST["numREP"];
        $numFabrica = $prefixoREP . $numREP;
        $HOS = $_POST["hos"];
        $Bio = $_POST["biometria"];
-       $Prox = $_POST["proximidade"];
         $data = date("Y/m/d");
         $hora = date("H:i:s");
        $Obseracao = str_replace("\r\n", "<br/>", strip_tags($_POST["descricao"]));
         //GRAVANDO NO BANCO DE DADOS
-       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LProx) VALUES ('Velti G', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio', '$Prox')");
+       $executa = $PDO->query("INSERT INTO cadastro_1510 (Modelo, NumREP, DataCadastro, HoraCadastro, Status, Observa, UserCadastro, HOS, LBio, LMif) VALUES ('Velti I', '$numFabrica', '$data', '$hora', '1', '$Obseracao', '$Nick', '$HOS', '$Bio', '9')");
         if($executa)
         {
          echo '<script type="text/javascript">alert("Equipamento Cadastrado!");</script>';
