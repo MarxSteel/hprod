@@ -15,13 +15,16 @@
    if ($Almoxarifado == "1") {
      $RecebePeca = "0";
      $CadastraPeca = "1";
+     $Deletar = "0";
    }
    elseif ($Almoxarifado === "2") {
      $RecebePeca = "1";
      $CadastraPeca = "0";
+     $Deletar = "0";
    }
    elseif ($Almoxarifado === "3") {
      $RecebePeca = "1";
      $CadastraPeca = "1";
+     $Deletar = "1";
    }
 ?>

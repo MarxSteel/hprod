@@ -4,6 +4,7 @@
  $PDO = db_connect();
 require_once 'QueryUser.php';
    $id = $_GET['ID'];
+
    $dFor = $PDO->prepare("SELECT * FROM laudo WHERE id='$id'");
    $dFor->execute();
     $campo = $dFor->fetch();
@@ -17,11 +18,6 @@ require_once 'QueryUser.php';
     $usrLaudo = $campo['usrLaudo'];
     $usrRec = $campo['usrRec'];
     $usrCad = $campo['usrCad'];
-
-
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -122,12 +118,50 @@ word-wrap: break-word;
         </i>
        </li>
        </div>
+       <div class="col-xs-12">
+       <h3>DESEJA REALMENTE DELETAR ?</h3>
+      <form name="lau" id="name" method="post" action="" enctype="multipart/form-data">
+       <div class="col-xs-12"><br />
+        <input name="lau" type="submit" class="btn bg-red btn-lg btn-block" id="lau" value="SIM, DESEJO DELETAR O ITEM"  /> 
+       </div>  
+      </form>
+      <?php
+       if(@$_POST["lau"])
+       {
+        $Deletar = $PDO->query("DELETE from laudo WHERE id='$id'");     
+        if ($Deletar)
+        {   
+         $Ev = "Item Deletado";
+         $InsLog = $PDO->query("INSERT INTO loglaudo (Evento, UserEvento, EventoID, DataCadastro) VALUES ('$Ev', '$NomeUserLogado', '30', '$DataRecebe')"); 
+         if ($InsLog) 
+         {
+          echo '<script type="text/JavaScript">alert("Excluido com sucesso");</script>';
+          echo '<script type="text/javascript">window.close();</script>';
+         }
+         else
+         {
+          echo '<script type="text/javascript">alert("Erro ao salvar Log");</script>';
+         }
+        }
+       }
+      ?>
+       </div>
       </div>
+
+
+
+
      </div>
-    </section>
-   </div>
+    </div>
+   </section>
   </div>
-<?php include_once 'footer.php'; ?>
+ </div>
+<footer class="main-footer">
+ <div class="pull-right hidden-xs"><b>Vers&atilde;o</b> <?php echo $versao; ?></div>
+  <strong>Copyright &copy; 2016 
+   <a href="http://henry.com.br">Henry Equipamentos e Sistemas </a>.
+  </strong> Todos os Direitos Reservados.
+</footer>
 </div>
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

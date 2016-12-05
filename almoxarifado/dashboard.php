@@ -10,9 +10,6 @@ require 'QueryUser.php';
   $ChamaLaudo2 = "SELECT * FROM laudo WHERE Status='2' ORDER BY id DESC";
   $L12 = $PDO->prepare($ChamaLaudo2);
   $L12->execute();
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +26,6 @@ require 'QueryUser.php';
  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 </head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
  <header class="main-header">
@@ -90,12 +86,12 @@ require 'QueryUser.php';
         <table id="laudos" class="table table-bordered table-striped">
          <thead>
           <tr>
-           <th width="10" >#</th>
-           <th width="50" >Data</th>
-           <th>Item</th>
-           <th width="35" >Status</th>
-           <th width="10" ></th>
-           <th width="10" ></th>
+           <th width="5%">#</th>
+           <th width="15%">Data</th>
+           <th width="50%">Item</th>
+           <th width="10%">Status</th>
+           <th width="8%"></th>
+           <th width="12%"></th>
           </tr>
          </thead>
          <tbody>
@@ -111,9 +107,15 @@ require 'QueryUser.php';
                echo '<td>';
                echo '<button class="btn bg-orange btn-block btn-xs disabled">ENVIADO</button>';
                echo '</td>';
-               echo '<td><a class="btn bg-olive btn-block btn-xs" href="';
-                echo "javascript:abrir('Recebe.php?ID=" . $L['id'] . "');";
-                echo '"><i class="fa fa-plus"> RECEBER</i></a></td>';
+                if ($RecebePeca === "1") 
+                {
+                 echo '<td><a class="btn bg-olive btn-block btn-xs" href="';
+                 echo "javascript:abrir('Recebe.php?ID=" . $L['id'] . "');";
+                 echo '"><i class="fa fa-plus"> RECEBER</i></a></td>';
+                }
+                else{
+                  echo "<td></td>";
+                }
               }
               elseif ($Status === "2") 
               {
@@ -122,41 +124,46 @@ require 'QueryUser.php';
                echo '</td>';
                echo '<td><a class="btn bg-navy btn-block btn-xs" href="';
                 echo "javascript:abrir('Preencher.php?ID=" . $L['id'] . "');";
-                echo '"><i class="fa fa-plus"> LAUDO</i></a></td>';
+                echo '"><i class="fa fa-plus">LAUDO</i></a></td>';
               }
               elseif ($Status === "3") 
               {
                echo '<td>';
-               echo '<button class="btn btn-success btn-block btn-xs disabled">APROVADO</button>';
+                echo '<button class="btn btn-success btn-block btn-xs disabled">APROVADO</button>';
                echo '</td>';
                $LkL = $L['Laudo'];
                echo '<td>';
                 if ($RecebePeca === "1") 
                 {
-                 echo '<a href="laudos/' . $LkL . ' " target="_blank" class="btn btn-default btn-xs"><i class="fa fa-download"></i> BAIXAR </a>';
+                 echo '<a href="laudos/' . $LkL . ' " target="_blank" class="btn btn-default btn-xs"><i class="fa fa-download"></i>BAIXAR </a>';
                 }
-                else{
-                }
-                echo '</td>';
-              }
-              elseif ($Status === "4") 
-              {
-               echo '<td>';
-               echo '<button class="btn btn-danger btn-block btn-xs disabled">REPROVADO</button>';
-               echo '</td>';
-               $LkL = $L['Laudo'];
-               echo '<td>';
-                if ($RecebePeca === "1") 
-                {
-                 echo '<a href="laudos/' . $LkL . ' " target="_blank" class="btn btn-default btn-xs"><i class="fa fa-download"></i> BAIXAR </a>';
-                }
-                else{
-                }
+                else { }
                  echo '</td>';
+                }
+                elseif ($Status === "4") 
+                {
+                 echo '<td>';
+                  echo '<button class="btn btn-danger btn-block btn-xs disabled">REPROVADO</button>';
+                 echo '</td>';
+                if ($RecebePeca === "1") 
+                {
+                 echo '<td><a class="btn bg-olive btn-block btn-xs" href="';
+                 echo "javascript:abrir('Preencher.php?ID=" . $L['id'] . "');";
+                 echo '"><i class="fa fa-plus"> RECEBER</i></a></td>';
+                }
+                else{
+                  echo "<td></td>";
+                }
               }
-              echo '<td><a class="btn btn-default btn-block btn-xs" href="';
+              echo '<td><a class="btn btn-warning btn-xs" href="';
               echo "javascript:abrir('vProduto.php?ID=" . $L['id'] . "');";
-              echo '"><i class="fa fa-search"> </i></a></td>';
+              echo '"><i class="fa fa-search"> </i> VISUALIZAR</a>&nbsp;';
+              if ($Deletar === "1") {
+              echo '<a class="btn btn-danger btn-xs" href="';
+              echo "javascript:abrir('deleta.php?ID=" . $L['id'] . "');";
+              echo '"><i class="fa fa-close"> </i></a></td>';
+              }
+
              echo '</tr>';
              endwhile;
           ?>
