@@ -910,7 +910,7 @@
        <div class="col-md-6">
         <div class="box box-widget">
          <div class="info-box">
-          <a href="javascript:abrir('Cad/08/LT2_E1.php');">
+          <a href="javascript:abrir('Cad/08/LT_E1.php');">
            <span class="info-box-icon bg-red">LT</span>
           </a>
           <div class="info-box-content">
