@@ -14,6 +14,14 @@ require_once 'QueryUser.php';
     $UserCadastro = $campo['usrCad'];
     $Observa = $campo['obs'];
     $DataCadastrado = $campo['dataCadastro'];
+    $usrLaudo = $campo['usrLaudo'];
+    $usrRec = $campo['usrRec'];
+    $usrCad = $campo['usrCad'];
+
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -70,6 +78,8 @@ word-wrap: break-word;
        <li class="list-group-item">
         <strong><?php echo $Nome; ?></strong>
        </li>
+      </div>
+      <div class="col-xs-6">
        <li class="list-group-item">
         <b>Código:</b>
          <a class="pull-right"><?php echo $Codigo; ?></a>
@@ -85,17 +95,33 @@ word-wrap: break-word;
        <li class="list-group-item">
         <b>Data de Cadastro:</b>
         <a class="pull-right"><?php echo $DataCadastrado; ?></a>
+       </li>       
+      </div> 
+      <div class="col-xs-6">
+       <li class="list-group-item">
+        <b>Responsável pelo cadastro:</b>
+        <a class="pull-right"><?php echo $usrCad; ?></a>
+       </li>
+       <li class="list-group-item">
+        <b>Responsável pelo recebimento:</b>
+        <a class="pull-right"><?php echo $usrRec; ?></a>
+       </li>
+       <li class="list-group-item">
+        <b>Responsável pelo laudo:</b>
+        <a class="pull-right"><?php echo $usrLaudo; ?></a>
        </li>
        <li class="list-group-item">
         <b>Cadastrado por:</b>
         <a class="pull-right"><?php echo $DataCadastrado; ?></a>
        </li>
+      </div>
+      <div class="col-xs-12">
        <li class="list-group-item"><b>Observações</b><br />
         <i class="texto">
          <?php echo $Observa; ?>
         </i>
        </li>
-      </div>
+       </div>
       </div>
      </div>
     </section>
